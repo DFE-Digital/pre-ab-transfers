@@ -23,4 +23,4 @@ jobs:
           CF_CLI_VERSION: v7 # default v7, allowed values: v6 or v7
 
       - name: Push to GOV.UK PaaS
-        run: cf push -b staticfile_buildpack academy-transfers-prototype
+        run: cf push academy-transfers-prototype
