@@ -19,8 +19,6 @@ jobs:
           CF_USERNAME: ${{ secrets.CF_USERNAME }}
           CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
           CF_SPACE_NAME: academy-transfers # required
-          # Optional inputs
-          CF_CLI_VERSION: v7 # default v7, allowed values: v6 or v7
 
       - name: Push to GOV.UK PaaS
         run: cf push -b staticfile_buildpack academy-transfers-prototype
