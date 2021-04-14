@@ -30,8 +30,7 @@
 {% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
 
-{# custom components #}
-{# Most of these copied from the Apply for teacher training prototype #}
+<!--custom components-->
 {% from "_components/autocomplete/macro.njk"   import appAutocomplete %}
 {% from "_components/banner/macro.njk"         import appBanner %}
 {% from "_components/summary-card/macro.njk"   import appSummaryCard %}
@@ -41,14 +40,14 @@
 {% from "_components/primary-navigation-dark/macro.njk"   import appPrimaryNavigationDark %}
 {% from "_components/timeline/macro.njk"   import appTimeline %}
 
-{# moj components #}
+<!--moj components-->
 {%- from "moj/components/filter/macro.njk" import mojFilter -%}
 {%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
 {%- from "moj/components/pagination/macro.njk" import mojPagination -%}
 {%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
 
 {% block head %}
-  {% include "version-2/_includes/head.html" %}
+  {% include "_includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
@@ -77,7 +76,9 @@
     ] if not hideNav
   }) }}
 
-  {% set rightHandSideNavHtml %}
+  <!--Establish what this component does-->
+
+  {# {% set rightHandSideNavHtml %}
     {% if data.isHatModel %}
       <nav class="moj-primary-navigation">
         <ul class="moj-primary-navigation__list">
@@ -92,21 +93,24 @@
 
       </nav>
     {% endif %}
-  {% endset %}
+  {% endset %} #}
 
-  {% set navItems = [{
-      text: 'Academy transfers',
-      href: '../transfers/dashboard/1',
+
+  <!--we can bring back the primary moj navigation when there is a user need for it-->
+
+  {# {% set navItems = [{
+      text: 'Academy transfers (10)',
+      href: '/transfers/dashboard/1',
       active: true if navActive == 'home'
     },
     {
-      text: 'Conversions',
-      href: '../404',
+      text: 'Conversions (0)',
+      href: '/404',
       active: true if navActive == 'convert'
     },
     {
-      text: 'Significant change',
-      href: '../404',
+      text: 'Significant change (0)',
+      href: '/404',
       active: true if navActive == 'change'
     }
     ] %}
@@ -127,25 +131,20 @@
       }) }}
     {% endif %}
 
-  {% endif %}
+  {% endif %} #}
 
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "prototype"
-  },
-  classes: 'govuk-!-margin-top-1',
-  html: 'This is a prototype of a new service. <a href="#" class="govuk-link">Give feedback to help us improve this service</a>.'
-}) }}
-{% block pageNavigation %}
-{% endblock %}
-{% block pageBanner %}
-{% endblock %}
+
 {% endblock %}
 
-{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+{% block content %}
+
+  {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% endblock %}
+
 
 {% set metaHtml %}
   <ul class="govuk-footer__meta-custom govuk-list govuk-!-font-size-16">
@@ -165,19 +164,19 @@
         html: metaHtml,
         items: [
         {
-          href: "../accessibility-statement",
+          href: "/accessibility-statement",
           text: "Accessibility"
         },{
-          href: "../cookies",
+          href: "/cookies",
           text: "Cookies"
         },{
-          href: "../privacy-policy",
+          href: "/privacy-policy",
           text: "Privacy policy"
         },{
-          href: "../admin/clear-data",
+          href: "/admin/clear-data",
           text: "Clear data"
         }, {
-          href: "../admin",
+          href: "/admin",
           text: "Admin"
         }, {
           href: "/apply/" + providerCode + "/" + courseCode + "?dualrunning=true&variant=1",
@@ -196,7 +195,7 @@
 
 {% block bodyEnd %}
   {% block scripts %}
-    {% include "../_includes/scripts.html" %}
+    {% include "_includes/scripts.html" %}
     {% block pageScripts %}{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->

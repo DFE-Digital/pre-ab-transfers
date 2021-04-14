@@ -1,0 +1,64 @@
+{% extends "version-2/layout.html" %}
+
+{% set pageTitle = "What type of transfer is it? – Transfer an academy – GOV.UK" %}
+
+{% set relatedNavigation = 'true' %}
+
+{% block beforeContent %}
+  {% include "version-2/includes/form-header.html" %}
+{% endblock %}
+
+{% block content %}
+  {% block formQuestions %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="../features-of-a-transfer" method="post" novalidate>
+          <!--page heading with caption include-->
+          {% set pageHeading %}
+            <span class="govuk-caption-m">
+                Reference number: AS_6759840
+            </span>
+            <h1 class="govuk-heading-l">
+                Has this transfer started because RDD or ESFA have intervened with the academy or trust?
+            </h1>
+          {% endset %}
+
+          {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "rdd or esfa intervention",
+            name: "rdd or esfa intervention",
+            fieldset: {
+              legend: {
+                html: pageHeading,
+                isPageHeading: true
+              }
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes"
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+            ]
+          }) }}
+
+          {{ govukDetails({
+            summaryText: "Help with intervention transfers",
+            text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+          }) }}
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+        </form>
+      </div>
+
+      <!--related navigation-->
+      {% include "version-2/includes/related-navigation.html" %}
+    </div>
+  {% endblock %}
+
+{% endblock %}
