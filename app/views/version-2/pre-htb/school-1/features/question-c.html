@@ -1,93 +1,80 @@
-{% extends "version-2/layout.html" %}
+{% extends "version-2/includes/form-template.html" %}
 
-{% set pageTitle = "Has this transfer started because RDD or ESFA have intervened with the academy or trust? – Transfer an academy – GOV.UK" %}
+{% set pageTitle = "What type of transfer is it? – Transfer an academy – GOV.UK" %}
 
 {% set relatedNavigation = 'true' %}
 
-{% block beforeContent %}
-  {% include "version-2/includes/form-header.html" %}
-{% endblock %}
+{% block formQuestions %}
+  <form action="../features-of-a-transfer" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-m">
+          Reference number: AS_6759840
+      </span>
+      <h1 class="govuk-heading-l">
+          What type of transfer is it?
+      </h1>
+    {% endset %}
 
-{% block content %}
-  {% block formQuestions %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <form action="../features-of-a-transfer" method="post" novalidate>
-          <!--page heading with caption include-->
-          {% set pageHeading %}
-            <span class="govuk-caption-m">
-                Reference number: AS_6759840
-            </span>
-            <h1 class="govuk-heading-l">
-                What type of transfer is it?
-            </h1>
-          {% endset %}
+    {% set typeOfTransfer %}
+      {{ govukInput({
+        id: "other-type-of-transfer",
+        name: "other-type-of-transfer",
+        type: "text",
+        spellcheck: true,
+        classes: "govuk-!-width-full",
+        label: {
+          text: "Enter the type of transfer"
+        }
+      }) }}
+    {% endset -%}
 
-          {% set typeOfTransfer %}
-            {{ govukInput({
-              id: "type-of-transfer",
-              name: "type-of-transfer",
-              type: "text",
-              spellcheck: true,
-              classes: "govuk-!-width-full",
-              label: {
-                text: "Enter the type of transfer"
-              }
-            }) }}
-          {% endset -%}
+    {{ govukRadios({
+      idPrefix: "type-of-transfer",
+      name: "type-of-transfer",
+      fieldset: {
+        legend: {
+          html: pageHeading,
+          isPageHeading: true
+        }
+      },
+      items: [
+        {
+          value: "Closure of a SAT and the academy joining a MAT",
+          text: "Closure of a SAT and the academy joining a MAT"
+        },
+        {
+          value: "Closure of a MAT and academies joining a MAT(s)",
+          text: "Closure of a MAT and academies joining a MAT(s)"
+        },
+        {
+          value: "Academy moving out of a MAT and joining another MAT",
+          text: "Academy moving out of a MAT and joining another MAT"
+        },
+        {
+          value: "Academies joining together to form a new MAT",
+          text: "Academies joining together to form a new MAT"
+        },
+        {
+          value: "Two or more academy trusts are merging",
+          text: "Two or more academy trusts are merging"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "Other type of transfer",
+          text: "Any other type of transfer",
+          conditional: {
+            html: typeOfTransfer
+          }
+        }
+      ]
+    }) }}
 
-          {{ govukRadios({
-            idPrefix: "type-of-transfer",
-            name: "type-of-transfer",
-            fieldset: {
-              legend: {
-                html: pageHeading,
-                isPageHeading: true
-              }
-            },
-            items: [
-              {
-                value: "Closure of a SAT and the academy joining a MAT",
-                text: "Closure of a SAT and the academy joining a MAT"
-              },
-              {
-                value: "Closure of a MAT and academies joining a MAT(s)",
-                text: "Closure of a MAT and academies joining a MAT(s)"
-              },
-              {
-                value: "Academy moving out of a MAT and joining another MAT",
-                text: "Academy moving out of a MAT and joining another MAT"
-              },
-              {
-                value: "Academies joining together to form a new MAT",
-                text: "Academies joining together to form a new MAT"
-              },
-              {
-                value: "Two or more academy trusts are merging",
-                text: "Two or more academy trusts are merging"
-              },
-              {
-                divider: "or"
-              },
-              {
-                value: "Something else",
-                text: "Something else",
-                conditional: {
-                  html: typeOfTransfer
-                }
-              }
-            ]
-          }) }}
-
-          {{ govukButton({
-            text: "Save and continue"
-          }) }}
-        </form>
-      </div>
-
-      <!--related navigation-->
-      {% include "version-2/includes/related-navigation.html" %}
-    </div>
-  {% endblock %}
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
 
 {% endblock %}
