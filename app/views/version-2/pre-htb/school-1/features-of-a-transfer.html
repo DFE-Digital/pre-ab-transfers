@@ -20,16 +20,19 @@
             <h1 class="govuk-heading-l">
             Features of the transfer
             </h1>
+            <h2 class="govuk-heading-m">
+                Outgoing trust: <span class="govuk-!-font-weight-regular govuk-!-font-size-24">St Wilfred's primary school</span>
+            </h2>
             <p class="govuk-body">
                 This information is pre-populated from TRAMS and the school's application form.
             </p>
-            <hr class="govuk-section-break govuk-section-break--m">
+            <hr class="govuk-section-break govuk-section-break--l">
 
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Outgoing trust
+                        Who initiated this academy transfer?
                     </dt>
                     <dd class="govuk-summary-list__value">
                     {% if data['Who initiated the academy transfer']%}
@@ -51,7 +54,8 @@
                     </dt>
                     <dd class="govuk-summary-list__value">
                     {% if data['rdd or esfa intervention']%}
-                        {{data['rdd or esfa intervention']}}
+                        <p class="govuk-body">{{data['rdd or esfa intervention']}}</p>
+                        <p class="govuk-body">{{data['more-detail']}}</p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
@@ -69,7 +73,8 @@
                     </dt>
                     <dd class="govuk-summary-list__value">
                     {% if data['type-of-transfer']%}
-                        {{data['type-of-transfer']}}
+                        <p class="govuk-body">{{data['type-of-transfer']}}</p>
+                        <p class="govuk-body">{{data['other-type-of-transfer']}}</p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
