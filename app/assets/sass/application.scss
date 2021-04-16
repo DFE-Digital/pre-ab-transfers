@@ -55,6 +55,10 @@ $govuk-assets-path: '/govuk/assets/';
 
 @import "components/dashboard";
 
+// Version 2
+
+@import "version-2/summary-list";
+
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
