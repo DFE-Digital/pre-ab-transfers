@@ -1,0 +1,14 @@
+//When users cannot change values in the summary list and when there is only two items in the summary row, use 50% width to space out the content
+
+.govuk-summary-list__key--width-50,
+.govuk-summary-list__value--width-50 {
+    @include govuk-media-query($from: tablet) {
+        width: 50%;
+    }
+}
+
+.govuk-summary-list__value--width-50:last-child {
+    @include govuk-media-query($from: tablet) {
+      width: 50%;
+    }
+}
