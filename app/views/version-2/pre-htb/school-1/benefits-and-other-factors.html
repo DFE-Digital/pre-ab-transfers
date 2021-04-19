@@ -1,6 +1,6 @@
 {% extends "version-2/layout.html" %}
 
-{% set pageTitle = "Features of the transfer – Transfer an academy – GOV.UK" %}
+{% set pageTitle = "Benefits and other factors for " + projectData.name + " – Transfer an academy – GOV.UK" %}
 
 {% set projectData = data['records'][0] %}
 
@@ -16,7 +16,7 @@
                 Reference number: {{ projectData.reference }}
             </span>
             <h1 class="govuk-heading-l">
-                Features of the transfer
+                Benefits and other factors
             </h1>
             <h2 class="govuk-heading-m">
                 Outgoing trust: <span class="govuk-!-font-weight-regular govuk-!-font-size-24">{{ projectData.name }}</span>
@@ -30,17 +30,17 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Who initiated this academy transfer?
+                        What are the benefits the transfer intended to bring?
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['Who initiated the academy transfer']%}
-                        {{data['Who initiated the academy transfer']}}
+                    {% if data['benefits-of-transfer']%}
+                        <p class="govuk-body">{{data['benefits-of-transfer']}}</p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./features/question-a">
+                    <a class="govuk-link" href="./set-dates/question-a">
                         Change<span class="govuk-visually-hidden">outgoing trust</span>
                     </a>
                     </dd>
@@ -48,45 +48,25 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Reason for transfer
+                        Are there any other factors to consider during this transfer?
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['rdd or esfa intervention']%}
-                        <p class="govuk-body">{{data['rdd or esfa intervention']}}</p>
-                        <p class="govuk-body">{{data['more-detail']}}</p>
+                    {% if data['other-factors']%}
+                        <p class="govuk-body">{{data['other-factors']}}</p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./features/question-b">
+                    <a class="govuk-link" href="./set-dates/question-b">
                         Change<span class="govuk-visually-hidden">reason for transfer</span>
-                    </a>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Type of transfer
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    {% if data['type-of-transfer']%}
-                        <p class="govuk-body">{{data['type-of-transfer']}}</p>
-                        <p class="govuk-body">{{data['other-type-of-transfer']}}</p>
-                    {% else %} 
-                        <span class="empty">Empty</span>
-                    {% endif %}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./features/question-c">
-                        Change<span class="govuk-visually-hidden">type of transfer</span>
                     </a>
                     </dd>
                 </div>
         
             </dl>
 
-            <form action="./set-transfer-dates" method="post" novalidate>
+            <form action="#" method="post" novalidate>
 
             <input type="hidden" name="answers-checked" value="true">
 

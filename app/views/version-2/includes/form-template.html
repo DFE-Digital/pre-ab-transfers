@@ -2,12 +2,7 @@
 
 {% block beforeContent %}
   
-    {{ govukPhaseBanner({
-        tag: {
-        text: "prototype"
-        },
-        html: 'This is a prototype of a new service. <a class="govuk-link" href="#">Give feedback to help us improve this service</a>.'
-    }) }}
+    {% include "version-2/includes/phase-banner.html" %}
 
     <!--setting for dynamic back link-->
     {% if not backLink %}

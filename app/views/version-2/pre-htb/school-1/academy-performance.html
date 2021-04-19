@@ -2,14 +2,10 @@
 
 {% set pageTitle = "Academy performance(reference) – Transfer an academy – GOV.UK" %}
 
-{% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a prototype of a new service. <a class="govuk-link" href="#">Give feedback to help us improve this service</a>.'
-  }) }}
+{% set projectData = data['records'][0] %}
 
+{% block beforeContent %}
+  {% include "version-2/includes/phase-banner.html" %}
   <a class="govuk-back-link" href="../school-1/st-wilfreds-ps">Back to task list</a>
 {% endblock %}
 
@@ -17,13 +13,13 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
             <span class="govuk-caption-m">
-                Reference number: AS_6759840
+                Reference number: {{ projectData.reference }}
             </span>
             <h1 class="govuk-heading-l">
                 Academy performance
             </h1>
             <h2 class="govuk-heading-m">
-                Outgoing trust: <span class="govuk-!-font-weight-regular govuk-!-font-size-24">St Wilfred's primary school</span>
+                Outgoing trust: <span class="govuk-!-font-weight-regular govuk-!-font-size-24">{{ projectData.name }}</span>
             </h2>
             <p class="govuk-body">
                 This information is pre-populated from TRAMS and the school's application form.

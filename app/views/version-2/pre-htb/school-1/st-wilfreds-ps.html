@@ -3,13 +3,7 @@
 {% set pageTitle = "St.Wilfred's primary school – Transfer an academy – GOV.UK" %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "prototype"
-    },
-    html: 'This is a prototype of a new service. <a class="govuk-link" href="#">Give feedback to help us improve this service</a>.'
-  }) }}
-
+  {% include "version-2/includes/phase-banner.html" %}
   <a class="govuk-back-link" href="/transfers/dashboard/1">Back to transfer projects</a>
 {% endblock %}
 
@@ -87,7 +81,7 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/transfers/benefits.html" aria-describedby="contact-details-status">
+                <a href="./benefits-and-other-factors.html" aria-describedby="contact-details-status">
                   Benefits and other factors
                 </a>
               </span>
