@@ -1,8 +1,8 @@
 {% extends "version-2/layout.html" %}
 
-{% set pageTitle = "Benefits and other factors for " + projectData.name + " – Transfer an academy – GOV.UK" %}
-
 {% set projectData = data['records'][0] %}
+
+{% set pageTitle = "Benefits and other factors for " + projectData.name + " – Transfer an academy – GOV.UK" %}
 
 {% block beforeContent %}
   {% include "version-2/includes/phase-banner.html" %}
@@ -40,7 +40,7 @@
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./set-dates/question-a">
+                    <a class="govuk-link" href="./benefits-and-other-factors/question-a">
                         Change<span class="govuk-visually-hidden">outgoing trust</span>
                     </a>
                     </dd>
@@ -58,7 +58,7 @@
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./set-dates/question-b">
+                    <a class="govuk-link" href="./benefits-and-other-factors/question-b">
                         Change<span class="govuk-visually-hidden">reason for transfer</span>
                     </a>
                     </dd>
@@ -66,7 +66,7 @@
         
             </dl>
 
-            <form action="#" method="post" novalidate>
+            <form action="./st-wilfreds-ps" method="post" novalidate>
 
             <input type="hidden" name="answers-checked" value="true">
 

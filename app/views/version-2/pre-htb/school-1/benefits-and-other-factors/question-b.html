@@ -1,0 +1,105 @@
+{% extends "version-2/includes/form-template.html" %}
+
+{% set projectData = data['records'][0] %}
+
+{% set pageTitle = "Are there any other factors to consider during this transfer? – Transfer an academy – GOV.UK" %}
+
+{% set relatedNavigation = 'true' %}
+
+
+{% block formQuestions %}
+  <form action="../benefits-and-other-factors" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-m">
+          Reference number: {{ projectData.reference }}
+      </span>
+      <h1 class="govuk-heading-l">
+          Are there any other factors to consider during this transfer?
+      </h1>
+    {% endset %}
+
+    {% set highProfileHtml %}
+    {{ govukInput({
+      id: "high-profile",
+      name: "high-profile",
+      type: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Specify this concern further"
+      }
+    }) }}
+    {% endset -%}
+
+    {% set complexIssuesHtml %}
+    {{ govukInput({
+      id: "complex-issues",
+      name: "complex-issues",
+      type: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Specify this concern further"
+      }
+    }) }}
+    {% endset -%}
+
+    {% set financeDebtHtml %}
+    {{ govukInput({
+      id: "finance-debt",
+      name: "finance-debt",
+      type: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Specify this concern further"
+      }
+    }) }}
+    {% endset -%}
+
+    {{ govukCheckboxes({
+      idPrefix: "waste",
+      name: "waste",
+      fieldset: {
+        legend: {
+          html: pageHeading,
+          isPageHeading: true
+        }
+      },
+      hint: {
+        text: "Select all that apply."
+      },
+      items: [
+        {
+          value: "high-profile-transfer",
+          text: "This is a high profile transfer (ministers and media could be involved)",
+          conditional: {
+            html: highprofileHtml
+          }
+        },
+
+        {
+          value: "complex-issues",
+          text: "There are complex land and building issues",
+          conditional: {
+            html: complexIssuesHtml
+          }
+        },
+
+        {
+          value: "finance-debt",
+          text: "There are finance and debt concerns",
+          conditional: {
+            html: financeDebtHtml
+          }
+        }
+      ]
+    }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+  </form>
+
+{% endblock %}
