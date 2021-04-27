@@ -7,8 +7,63 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="govuk-heading-l">
-        Academy transfer projects
-    </h1>
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+          Academy transfer projects
+      </h1>
+
+      <p class="govuk-body-l">
+        Use this service to start a new academy transfer project or update an existing project.
+      </p>
+
+      {{ govukButton({
+        text: "Start a new transfer project",
+        href: "#",
+        isStartButton: true
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l">
+          Pre HTB
+      </h2>
+
+      {% for project in data['records'] | slice(4) | first %}
+        <div class="app-application-card">
+          <div class="app-application-card_col">
+            <div>
+              <h3 class="govuk-heading-m">
+                <a class="govuk-link govuk-!-margin-right-1" href="./pre-htb/school-1/st-wilfreds-ps.html">
+                  {{ project.name }}
+                </a>
+                <span class="govuk-caption-m govuk-!-display-inline">
+                  {{ project.reference }}
+                </span>
+              </h3>
+              <p class="govuk-body govuk-!-margin-bottom-1">
+                Application to transfer: {{ project.joining }}
+              </p>
+              <p class="govuk-body">
+                Local authority: {{ project.la }}
+              </p>
+            </div>
+          </div>
+          {# <div class="app-application-card_col">
+            <span class="govuk-tag govuk-tag--purple">
+              Pre htb
+            </span>
+            <span class="govuk-tag govuk-tag--green">
+              Newly assigned
+            </span>
+          </div> #}
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
     
 {% endblock %}
