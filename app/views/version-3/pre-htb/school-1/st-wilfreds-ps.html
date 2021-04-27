@@ -1,0 +1,279 @@
+{% extends "version-2/layout.html" %}
+
+{% set pageTitle = "St.Wilfred's primary school – Transfer an academy – GOV.UK" %}
+
+{% block beforeContent %}
+  {% include "version-2/includes/phase-banner.html" %}
+  <a class="govuk-back-link" href="/transfers/dashboard/1">Back to transfer projects</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-l">Reference number: AS_6759840</span>
+      <h1 class="govuk-heading-xl">
+        St Wilfred's primary school
+      </h1>
+    
+      <h2 class="govuk-heading-l">
+        Create head teacher board (HTB) template
+      </h2>
+      <p class="govuk-body">
+        The task list will help you prepare for the headteacher board (HTB) meeting. You can complete the tasks in any order.
+      </p>
+      <p class="govuk-body">
+        Some of the information in each task is already pre-populated from TRAMS and the school's application form. Some of the information you will need to fill out yourself.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m">
+    </div>
+
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+
+      <nav class="app-sub-navigation" aria-label="sub menu">
+
+        <ul class="app-sub-navigation__list">
+          <li class="app-sub-navigation__item">
+            <a class="app-sub-navigation__link" aria-current="page" href="#">Tasks</a>
+          </li>
+          <li class="app-sub-navigation__item">
+            <a class="app-sub-navigation__link"  href="./st-wilfreds-ps-reference-data">Reference data</a>
+          </li>
+          <li class="app-sub-navigation__item">
+            <a class="app-sub-navigation__link"  href="404.html">Rationale</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-s">
+        Features of the transfer
+      </h2>
+
+      <section class="app-summary-card govuk-!-margin-bottom-7">
+         <header class="app-summary-card__header">
+          <h2 class="app-summary-card__title">
+            Features of the transfer
+          </h2>
+        </header>
+        <div class="app-summary-card__body">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  Who initiated this academy transfer?
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {% if data['Who initiated the academy transfer']%}
+                  {{data['Who initiated the academy transfer']}}
+              {% else %} 
+                  <span class="empty">Empty</span>
+              {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./features/question-a?returnToTaskList=yes">
+                  Change<span class="govuk-visually-hidden">outgoing trust</span>
+              </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  Reason for transfer
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {% if data['rdd or esfa intervention']%}
+                  <p class="govuk-body">{{data['rdd or esfa intervention']}}</p>
+                  <p class="govuk-body">{{data['more-detail']}}</p>
+              {% else %} 
+                  <span class="empty">Empty</span>
+              {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./features/question-b">
+                  Change<span class="govuk-visually-hidden">reason for transfer</span>
+              </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  Type of transfer
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {% if data['type-of-transfer']%}
+                  <p class="govuk-body">{{data['type-of-transfer']}}</p>
+                  <p class="govuk-body">{{data['other-type-of-transfer']}}</p>
+              {% else %} 
+                  <span class="empty">Empty</span>
+              {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./features/question-c">
+                  Change<span class="govuk-visually-hidden">type of transfer</span>
+              </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+
+      <h2 class="govuk-heading-s">
+        Set transfer dates
+      </h2>
+
+      <section class="app-summary-card govuk-!-margin-bottom-7">
+         <header class="app-summary-card__header">
+          <h2 class="app-summary-card__title">
+            Set transfer dates
+          </h2>
+        </header>
+        <div class="app-summary-card__body">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  Date when the transfer was first discussed
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {% if data['transfer-first-discussed-date']%}
+                  <p class="govuk-body">{{data['transfer-first-discussed-date']}}</p>
+              {% else %} 
+                  <span class="empty">Empty</span>
+              {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./set-dates/question-a">
+                  Change<span class="govuk-visually-hidden">outgoing trust</span>
+              </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  Target date for transfer
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {% if data['target-date-for-transfer']%}
+                  <p class="govuk-body">{{data['target-date-for-transfer']}}</p>
+              {% else %} 
+                  <span class="empty">Empty</span>
+              {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./set-dates/question-b">
+                  Change<span class="govuk-visually-hidden">reason for transfer</span>
+              </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  Set HTB date
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {% if data['set-htb-date']%}
+                  <p class="govuk-body">{{data['set-htb-date']}}</p>
+              {% else %} 
+                  <span class="empty">Empty</span>
+              {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./set-dates/question-c">
+                  Change<span class="govuk-visually-hidden">type of transfer</span>
+              </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+
+      <h2 class="govuk-heading-s">
+        Benefits and other factors
+      </h2>
+
+      <section class="app-summary-card govuk-!-margin-bottom-7">
+         <header class="app-summary-card__header">
+          <h2 class="app-summary-card__title">
+            Benefits and other factors
+          </h2>
+        </header>
+        <div class="app-summary-card__body">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  What are the benefits the transfer intended to bring?
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {% if data['benefits-of-transfer']%}
+                  <p class="govuk-body">{{data['benefits-of-transfer']}}</p>
+              {% else %} 
+                  <span class="empty">Empty</span>
+              {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./benefits-and-other-factors/question-a">
+                  Change<span class="govuk-visually-hidden">outgoing trust</span>
+              </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                  Are there any other factors to consider during this transfer?
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {% if data['other-factors']%}
+                  <p class="govuk-body">{{data['other-factors']}}</p>
+              {% else %} 
+                  <span class="empty">Empty</span>
+              {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="./benefits-and-other-factors/question-b">
+                  Change<span class="govuk-visually-hidden">reason for transfer</span>
+              </a>
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">
+        Generate head teacher board (HTB) template
+      </h2>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        Review the information in this page and generate HTB template for St.Wilfreds primary school.
+      </p>
+
+      <form action="./set-transfer-dates" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Generate HTB template
+        </button>
+        <p class="govuk-body">
+          <a href="/version-3/dashboard-home" class="govuk-link govuk-link--no-visited-state">
+            Save and return to this project later
+          </a>
+        </p>
+      </div>
+      </form>
+
+    </div>
+
+  </div>      
+  
+
+{% endblock %}
