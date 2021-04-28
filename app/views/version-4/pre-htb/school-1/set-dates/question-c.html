@@ -1,0 +1,86 @@
+{% extends "version-2/includes/form-template.html" %}
+
+{% set pageTitle = "Set HTB date – Transfer an academy – GOV.UK" %}
+
+{% set relatedNavigation = 'true' %}
+
+
+{% block formQuestions %}
+  <form action="../set-transfer-dates" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-m">
+          Reference number: AS_6759840
+      </span>
+      <h1 class="govuk-heading-l">
+          Set HTB date
+      </h1>
+    {% endset %}
+
+    {{ govukRadios({
+      idPrefix: "set-htb-date",
+      name: "set-htb-date",
+      fieldset: {
+        legend: {
+          html: pageHeading,
+          isPageHeading: true
+        }
+      },
+      items: [
+        {
+          value: "Friday 1 January 2021",
+          text: "Friday 1 January 2021"
+        },
+        {
+          value: "Monday 1 February 2021",
+          text: "Monday 1 February 2021"
+        },
+        {
+          value: "Monday 1 March 2021",
+          text: "Monday 1 March 2021"
+        },
+        {
+          value: "Thursday 1 April 2021",
+          text: "Thursday 1 April 2021"
+        },
+        {
+          value: "Monday 3 May 2021",
+          text: "Monday 3 May 2021"
+        },
+        {
+          value: "Tuesday 1 June 2021",
+          text: "Tuesday 1 June 2021"
+        },
+        {
+          value: "Thursday 1 July 2021",
+          text: "Thursday 1 July 2021"
+        },
+        {
+          value: "Tuesday 3 August 2021",
+          text: "Tuesday 3 August 2021"
+        },
+        {
+          value: "Wednesday 1 September 2021",
+          text: "Wednesday 1 September 2021"
+        },
+        {
+          value: "Friday 1 October 2021",
+          text: "Friday 1 October 2021"
+        },
+        {
+          value: "Monday 1 November 2021",
+          text: "Monday 1 November 2021"
+        },
+        {
+          value: "Wednesday 1 December 2021",
+          text: "Wednesday 1 December 2021"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}
