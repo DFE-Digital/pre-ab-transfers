@@ -1,0 +1,72 @@
+{% extends "version-2/includes/form-template.html" %}
+
+{% set pageTitle = "Has this transfer started because RDD or ESFA have intervened with the academy or trust? – Transfer an academy – GOV.UK" %}
+
+{% set relatedNavigation = 'true' %}
+
+{% block formQuestions %}
+  <span class="govuk-caption-m">
+    Reference number: AS_6759840
+  </span>
+  <h1 class="govuk-heading-l">
+    Reason for transfer
+  </h1>
+  <form action="../features-of-a-transfer" method="post" novalidate>
+    {# <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-m">
+          Reference number: AS_6759840
+      </span>
+      <h1 class="govuk-heading-l">
+          Has this transfer started because RDD or ESFA have intervened with the academy or trust?
+      </h1>
+    {% endset %} #}
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "rdd or esfa intervention",
+      name: "rdd or esfa intervention",
+      fieldset: {
+        legend: {
+          text: "Has this transfer started because RDD, RSC or ESFA have intervened with the academy or trust?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukDetails({
+      summaryText: "Help with intervention transfers",
+      text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.",
+      classes: "govuk-!-margin-bottom-9"
+    }) }}
+
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
+      rows: "6",
+      label: {
+        text: "Can you provide more detail?",
+        classes: "govuk-label--m",
+        isPageHeading: true
+      },
+      hint: {
+        text: "Give more information about the intention and reasons for RDD, RSC or ESFA intervention if neccessary."
+      }
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+  {% endblock %}

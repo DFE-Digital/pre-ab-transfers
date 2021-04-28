@@ -1,0 +1,172 @@
+{% extends "version-2/layout.html" %}
+
+{% set pageTitle = "St.Wilfred's primary school – Transfer an academy – GOV.UK" %}
+
+{% block beforeContent %}
+  {% include "version-2/includes/phase-banner.html" %}
+  <a class="govuk-back-link" href="/transfers/dashboard/1">Back to transfer projects</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-l">Reference number: AS_6759840</span>
+      <h1 class="govuk-heading-xl">
+        St Wilfred's primary school
+      </h1>
+
+      {# <nav class="app-sub-navigation" aria-label="sub menu">
+
+        <ul class="app-sub-navigation__list">
+          <li class="app-sub-navigation__item">
+            <a class="app-sub-navigation__link" aria-current="page" href="#">Create HTB template</a>
+          </li>
+          <li class="app-sub-navigation__item">
+            <a class="app-sub-navigation__link"  href="404.html">Application form</a>
+          </li>
+          <li class="app-sub-navigation__item">
+            <a class="app-sub-navigation__link"  href="404.html">Project dates</a>
+          </li>
+          <li class="app-sub-navigation__item">
+            <a class="app-sub-navigation__link"  href="404.html">Project notes</a>
+          </li>
+        </ul>
+      </nav> #}
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+      <h2 class="govuk-heading-l">
+        Task list
+      </h2>
+      <p class="govuk-body">
+        The task list will help you prepare for the headteacher board (HTB) meeting. You can complete the tasks in any order.
+      </p>
+      <p class="govuk-body">
+        Some of the information in each task is already pre-populated from TRAMS and the school's application form. Some of the information you will need to fill out yourself.
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m">
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            Create headteacher board (HTB) template
+          </h2>
+          <ul class="app-task-list__items govuk-!-padding-left-0">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./features-of-a-transfer.html" aria-describedby="eligibility-status">
+                  Features of a transfer
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">Not for mvp</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./set-transfer-dates.html" aria-describedby="read-declaration-status">
+                  Set transfer dates
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">In progress</strong>
+            </li>
+            {# <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="transfer-overview.html" aria-describedby="company-information-status">
+                  General information
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong>
+            </li> #}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./benefits-and-other-factors.html" aria-describedby="contact-details-status">
+                  Benefits and other factors
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            Reference only
+          </h2>
+          <ul class="app-task-list__items govuk-!-padding-left-0">
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./academy-performance" aria-describedby="Academy performance">
+                Academy performance
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="academy-performance">Reference only</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./pupil-number" aria-describedby="Pupil number">
+                Pupil numbers
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="pupil-number">Reference only</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./latest-ofsted-judgement" aria-describedby="Latest Ofsted judgement">
+                  Latest Ofsted judgement
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="latest-ofsted-judgement">Reference only</strong>
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="./key-stage-performance-tables" aria-describedby="Key stage performance tables">
+                  Key stage performance tables
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Reference only</strong>
+            </li>
+
+          </ul>
+        </li>
+      </ol>
+    <hr class="govuk-section-break govuk-section-break--m">
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">
+        Generate head teacher board (HTB) template
+      </h2>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        Review the information in this page and generate HTB template for St.Wilfreds primary school.
+      </p>
+
+      <form action="./set-transfer-dates" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Generate HTB template
+        </button>
+        <p class="govuk-body">
+          <a href="/version-4/dashboard-home" class="govuk-link govuk-link--no-visited-state">
+            Save and return to this project later
+          </a>
+        </p>
+      </div>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

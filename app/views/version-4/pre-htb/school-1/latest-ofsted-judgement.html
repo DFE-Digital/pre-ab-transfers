@@ -1,0 +1,134 @@
+{% extends "version-2/layout.html" %}
+
+{% set pageTitle = "Latest Ofsted judgement(reference) – Transfer an academy – GOV.UK" %}
+
+{% set projectData = data['records'][0] %}
+
+{% block beforeContent %}
+  {% include "version-2/includes/phase-banner.html" %}
+  <a class="govuk-back-link" href="../school-1/st-wilfreds-ps">Back to task list</a>
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <span class="govuk-caption-m">
+                Reference number: {{ projectData.reference }}
+            </span>
+            <h1 class="govuk-heading-l">
+                Latest Ofsted judgement
+            </h1>
+            <h2 class="govuk-heading-m">
+                Outgoing trust: <span class="govuk-!-font-weight-regular govuk-!-font-size-24">{{ projectData.name }}</span>
+            </h2>
+            <p class="govuk-body">
+                This information is pre-populated from TRAMS and the school's application form.
+            </p>
+        <hr class="govuk-section-break govuk-section-break--l">
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        School name
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                    {% if data['#']%}
+                        <p class="govuk-body">{{data['#']}}</p>
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <!--Add change link if necessary based on needs-->
+                    {# <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./set-dates/question-a">
+                        Change<span class="govuk-visually-hidden">outgoing trust</span>
+                    </a>
+                    </dd> #}
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Ofsted Inspection date
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <span class="empty">Empty</span>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Overall Effectiveness
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <span class="empty">Empty</span>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Achievement of Pupils
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <span class="empty">Empty</span>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Quality of teaching
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <span class="empty">Empty</span>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Behaviour and safety of Pupils
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <span class="empty">Empty</span>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Leadership & Management
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <span class="empty">Empty</span>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Early years Provision
+                    </dt>
+                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                        <span class="empty">Empty</span>
+                    </dd>
+                </div>
+        
+            </dl>
+
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+            </div>
+
+            </form>           
+        </div>
+    </div>
+
+{% endblock %}
