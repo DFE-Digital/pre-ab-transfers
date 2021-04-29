@@ -1,6 +1,6 @@
 {% extends "version-4/layout.html" %}
 
-{% set pageTitle = "Set transfer dates – Transfer an academy – GOV.UK" %}
+{% set pageTitle = "Rationale – Transfer an academy – GOV.UK" %}
 
 {% set projectData = data['records'][0] %}
 
@@ -16,13 +16,13 @@
                 Reference number: {{ projectData.reference }}
             </span>
             <h1 class="govuk-heading-l">
-                Set transfer dates
+                Confirm project and trust rationale
             </h1>
             <h2 class="govuk-heading-m">
                 Outgoing trust: <span class="govuk-!-font-weight-regular govuk-!-font-size-24">{{ projectData.name }}</span>
             </h2>
             <p class="govuk-body">
-                This information is pre-populated from TRAMS and the school's application form.
+                This information is pre-populated from the school's application form.
             </p>
         <hr class="govuk-section-break govuk-section-break--l">
         </div>
@@ -35,7 +35,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Date when the transfer was first discussed
+                        Rationale for project
                     </dt>
                     <dd class="govuk-summary-list__value">
                     {% if data['transfer-first-discussed-date']%}
@@ -53,7 +53,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Target date for transfer
+                        Rationale for the trust or sponsor
                     </dt>
                     <dd class="govuk-summary-list__value">
                     {% if data['target-date-for-transfer']%}
@@ -68,28 +68,10 @@
                     </a>
                     </dd>
                 </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Set HTB date
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    {% if data['set-htb-date']%}
-                        <p class="govuk-body">{{data['set-htb-date']}}</p>
-                    {% else %} 
-                        <span class="empty">Empty</span>
-                    {% endif %}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./set-dates/question-c">
-                        Change<span class="govuk-visually-hidden">type of transfer</span>
-                    </a>
-                    </dd>
-                </div>
         
             </dl>
 
-            <form action="#" method="post" novalidate>
+            <form action="./st-wilfreds-ps" method="post" novalidate>
 
             <input type="hidden" name="answers-checked" value="true">
 
