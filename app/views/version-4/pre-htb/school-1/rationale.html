@@ -38,9 +38,9 @@
                         Rationale for project
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['transfer-first-discussed-date']%}
-                        <p class="govuk-body">{{data['transfer-first-discussed-date']}}</p>
-                    {% else %} 
+                    {% if data['project-rationale']%}
+                        <p class="govuk-body">{{data['project-rationale'] | safe }}</p>
+                    {% else %}
                         <span class="empty">Empty</span>
                     {% endif %}
                     </dd>
@@ -56,14 +56,14 @@
                         Rationale for the trust or sponsor
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['target-date-for-transfer']%}
-                        <p class="govuk-body">{{data['target-date-for-transfer']}}</p>
+                    {% if data['trust-rationale']%}
+                        <p class="govuk-body">{{data['trust-rationale']}}</p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./set-dates/question-b">
+                    <a class="govuk-link" href="./rationale/question-b">
                         Change<span class="govuk-visually-hidden">reason for transfer</span>
                     </a>
                     </dd>
