@@ -26,456 +26,272 @@
     </div>
 
     <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
-        <h2 class="govuk-heading-s">
-            Features of the transfer
-        </h2>
-        <section class="app-summary-card govuk-!-margin-bottom-7">
-            <header class="app-summary-card__header">
-                <h2 class="app-summary-card__title">
-                    Features of the transfer
-                </h2>
-            </header>
-            <div class="app-summary-card__body">
-                <dl class="govuk-summary-list">
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                            Who initiated this academy transfer?
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                        {% if data['Who initiated the academy transfer']%}
-                            {{data['Who initiated the academy transfer']}}
-                        {% else %} 
-                            <span class="empty">Empty</span>
-                        {% endif %}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./features/question-a">
-                            Change<span class="govuk-visually-hidden">outgoing trust</span>
-                        </a>
-                        </dd>
-                    </div>
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-s">
+                Features of the transfer
+            </h2>
+            <section class="app-summary-card govuk-!-margin-bottom-7">
+                <header class="app-summary-card__header">
+                    <h2 class="app-summary-card__title">
+                        Features of the transfer
+                    </h2>
+                </header>
+                <div class="app-summary-card__body">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                                Who initiated this academy transfer?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['Who initiated the academy transfer']%}
+                                {{data['Who initiated the academy transfer']}}
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./features/question-a">
+                                Change<span class="govuk-visually-hidden">outgoing trust</span>
+                            </a>
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                            Reason for transfer
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                        {% if data['rdd or esfa intervention']%}
-                            <p class="govuk-body">{{data['rdd or esfa intervention']}}</p>
-                            <p class="govuk-body">{{data['more-detail']}}</p>
-                        {% else %} 
-                            <span class="empty">Empty</span>
-                        {% endif %}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./features/question-b">
-                            Change<span class="govuk-visually-hidden">reason for transfer</span>
-                        </a>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                                Reason for transfer
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['rdd or esfa intervention']%}
+                                <p class="govuk-body">{{data['rdd or esfa intervention']}}</p>
+                                <p class="govuk-body">{{data['more-detail']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./features/question-b">
+                                Change<span class="govuk-visually-hidden">reason for transfer</span>
+                            </a>
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                            Type of transfer
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                        {% if data['type-of-transfer']%}
-                            <p class="govuk-body">{{data['type-of-transfer']}}</p>
-                            <p class="govuk-body">{{data['other-type-of-transfer']}}</p>
-                        {% else %} 
-                            <span class="empty">Empty</span>
-                        {% endif %}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./features/question-c">
-                            Change<span class="govuk-visually-hidden">type of transfer</span>
-                        </a>
-                        </dd>
-                    </div>
-                </dl>
-            </div>
-        </section>
-
-        <h2 class="govuk-heading-s">
-            Set transfer dates
-        </h2>
-
-        <section class="app-summary-card govuk-!-margin-bottom-7">
-            <header class="app-summary-card__header">
-                <h2 class="app-summary-card__title">
-                    Set transfer dates
-                </h2>
-            </header>
-            <div class="app-summary-card__body">
-                <dl class="govuk-summary-list">
-
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                            Date when the transfer was first discussed
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                        {% if data['transfer-first-discussed-date']%}
-                            <p class="govuk-body">{{data['transfer-first-discussed-date']}}</p>
-                        {% else %} 
-                            <span class="empty">Empty</span>
-                        {% endif %}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./set-dates/question-a">
-                            Change<span class="govuk-visually-hidden">outgoing trust</span>
-                        </a>
-                        </dd>
-                    </div>
-
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                            Target date for transfer
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                        {% if data['target-date-for-transfer']%}
-                            <p class="govuk-body">{{data['target-date-for-transfer']}}</p>
-                        {% else %} 
-                            <span class="empty">Empty</span>
-                        {% endif %}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./set-dates/question-b">
-                            Change<span class="govuk-visually-hidden">reason for transfer</span>
-                        </a>
-                        </dd>
-                    </div>
-
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                            Set HTB date
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                        {% if data['set-htb-date']%}
-                            <p class="govuk-body">{{data['set-htb-date']}}</p>
-                        {% else %} 
-                            <span class="empty">Empty</span>
-                        {% endif %}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./set-dates/question-c">
-                            Change<span class="govuk-visually-hidden">type of transfer</span>
-                        </a>
-                        </dd>
-                    </div>
-                </dl>
-            </div>
-        </section>
-
-        <h2 class="govuk-heading-s">
-            Benefits and other factors
-        </h2>
-
-        <section class="app-summary-card govuk-!-margin-bottom-7">
-            <header class="app-summary-card__header">
-                <h2 class="app-summary-card__title">
-                    Benefits and other factors
-                </h2>
-            </header>
-            <div class="app-summary-card__body">
-                <dl class="govuk-summary-list">
-
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                            What are the benefits the transfer intended to bring?
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                        {% if data['benefits-of-transfer']%}
-                            <p class="govuk-body">{{data['benefits-of-transfer']}}</p>
-                        {% else %} 
-                            <span class="empty">Empty</span>
-                        {% endif %}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./benefits-and-other-factors/question-a">
-                            Change<span class="govuk-visually-hidden">outgoing trust</span>
-                        </a>
-                        </dd>
-                    </div>
-
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
-                            Are there any other factors to consider during this transfer?
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                        {% if data['other-factors']%}
-                            <p class="govuk-body">{{data['other-factors']}}</p>
-                        {% else %} 
-                            <span class="empty">Empty</span>
-                        {% endif %}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./benefits-and-other-factors/question-b">
-                            Change<span class="govuk-visually-hidden">reason for transfer</span>
-                        </a>
-                        </dd>
-                    </div>
-
-                </dl>
-            </div>
-        </section>
-
-        <h2 class="govuk-heading-s">
-            Rationale
-        </h2>
-
-        <section class="app-summary-card govuk-!-margin-bottom-7">
-            <header class="app-summary-card__header">
-                <h2 class="app-summary-card__title">
-                    Rationale
-                </h2>
-            </header>
-            <div class="app-summary-card__body">
-                <dl class="govuk-summary-list">
-
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Rationale for project
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                        {% if data['project-rationale']%}
-                            <p class="govuk-body">{{data['project-rationale'] | safe }}</p>
-                        {% else %}
-                            <span class="empty">Empty</span>
-                        {% endif %}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./rationale/question-a">
-                            Change<span class="govuk-visually-hidden">outgoing trust</span>
-                        </a>
-                        </dd>
-                    </div>
-
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Rationale for the trust or sponsor
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                        {% if data['trust-rationale']%}
-                            <p class="govuk-body">{{data['trust-rationale']}}</p>
-                        {% else %} 
-                            <span class="empty">Empty</span>
-                        {% endif %}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./rationale/question-b">
-                            Change<span class="govuk-visually-hidden">reason for transfer</span>
-                        </a>
-                        </dd>
-                    </div>
-
-                </dl>
-            </div>
-        </section>
-
-        <h2 class="govuk-heading-s">
-            Academy performance
-        </h2>
-
-        <section class="app-summary-card govuk-!-margin-bottom-7">
-            <header class="app-summary-card__header">
-                <h2 class="app-summary-card__title">
-                    Academy performance
-                </h2>
-            </header>
-            <div class="app-summary-card__body">
-                <dl class="govuk-summary-list">
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        School phase
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Primary</p>
-                    </dd>
-                    <!--Add change link if necessary based on needs-->
-                    {# <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./set-dates/question-a">
-                        Change<span class="govuk-visually-hidden">outgoing trust</span>
-                    </a>
-                    </dd> #}
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                                Type of transfer
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['type-of-transfer']%}
+                                <p class="govuk-body">{{data['type-of-transfer']}}</p>
+                                <p class="govuk-body">{{data['other-type-of-transfer']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./features/question-c">
+                                Change<span class="govuk-visually-hidden">type of transfer</span>
+                            </a>
+                            </dd>
+                        </div>
+                    </dl>
                 </div>
+            </section>
 
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Age range
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">5 - 11 years old</p>
-                    </dd>
+            <h2 class="govuk-heading-s">
+                Set transfer dates
+            </h2>
+
+            <section class="app-summary-card govuk-!-margin-bottom-7">
+                <header class="app-summary-card__header">
+                    <h2 class="app-summary-card__title">
+                        Set transfer dates
+                    </h2>
+                </header>
+                <div class="app-summary-card__body">
+                    <dl class="govuk-summary-list">
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                                Date when the transfer was first discussed
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['transfer-first-discussed-date']%}
+                                <p class="govuk-body">{{data['transfer-first-discussed-date']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./set-dates/question-a">
+                                Change<span class="govuk-visually-hidden">outgoing trust</span>
+                            </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                                Target date for transfer
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['target-date-for-transfer']%}
+                                <p class="govuk-body">{{data['target-date-for-transfer']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./set-dates/question-b">
+                                Change<span class="govuk-visually-hidden">reason for transfer</span>
+                            </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                                Set HTB date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['set-htb-date']%}
+                                <p class="govuk-body">{{data['set-htb-date']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./set-dates/question-c">
+                                Change<span class="govuk-visually-hidden">type of transfer</span>
+                            </a>
+                            </dd>
+                        </div>
+                    </dl>
                 </div>
+            </section>
 
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Capacity
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">420</p>
-                    </dd>
+            <h2 class="govuk-heading-s">
+                Benefits and other factors
+            </h2>
+
+            <section class="app-summary-card govuk-!-margin-bottom-7">
+                <header class="app-summary-card__header">
+                    <h2 class="app-summary-card__title">
+                        Benefits and other factors
+                    </h2>
+                </header>
+                <div class="app-summary-card__body">
+                    <dl class="govuk-summary-list">
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                                What are the benefits the transfer intended to bring?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['benefits-of-transfer']%}
+                                <p class="govuk-body">{{data['benefits-of-transfer']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./benefits-and-other-factors/question-a">
+                                Change<span class="govuk-visually-hidden">outgoing trust</span>
+                            </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                                Are there any other factors to consider during this transfer?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['other-factors']%}
+                                <p class="govuk-body">{{data['other-factors']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./benefits-and-other-factors/question-b">
+                                Change<span class="govuk-visually-hidden">reason for transfer</span>
+                            </a>
+                            </dd>
+                        </div>
+
+                    </dl>
                 </div>
+            </section>
 
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        NOR (% full)
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">401 (95.47%)</p>
-                    </dd>
+            <h2 class="govuk-heading-s">
+                Rationale
+            </h2>
+
+            <section class="app-summary-card govuk-!-margin-bottom-7">
+                <header class="app-summary-card__header">
+                    <h2 class="app-summary-card__title">
+                        Rationale
+                    </h2>
+                </header>
+                <div class="app-summary-card__body">
+                    <dl class="govuk-summary-list">
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Rationale for project
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['project-rationale']%}
+                                <p class="govuk-body">{{data['project-rationale'] | safe }}</p>
+                            {% else %}
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./rationale/question-a">
+                                Change<span class="govuk-visually-hidden">outgoing trust</span>
+                            </a>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Rationale for the trust or sponsor
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['trust-rationale']%}
+                                <p class="govuk-body">{{data['trust-rationale']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./rationale/question-b">
+                                Change<span class="govuk-visually-hidden">reason for transfer</span>
+                            </a>
+                            </dd>
+                        </div>
+
+                    </dl>
                 </div>
+            </section>
 
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        PAN
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">60</p>
-                    </dd>
-                </div>
+            <h2 class="govuk-heading-s">
+                Academy performance
+            </h2>
 
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        PFI
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">No</p>
-                    </dd>
-                </div>
+            <section class="app-summary-card govuk-!-margin-bottom-7">
+                <header class="app-summary-card__header">
+                    <h2 class="app-summary-card__title">
+                        Academy performance
+                    </h2>
+                </header>
+                <div class="app-summary-card__body">
+                    <dl class="govuk-summary-list">
 
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Viability issue
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">No</p>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Deficit
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">No</p>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        School type
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Academy</p>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Dioceses % G or O
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Not applicable</p>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Distance to sponsor HQ
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">1.5 miles (9 minutes)</p>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        MP (party)
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Jonathan Djanogly (Conservative party)</p>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Ofsted judgement date
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Good (04-07-13). Short inspection - 13-09-17</p>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Current framework
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">No</p>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Achievement of pupil
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Good</p>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Quality of teaching
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Good</p>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Behaviour and safety of pupil
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Outstanding</p>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Leadership and management
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Good</p>
-                    </dd>
-                </div>
-
-                </dl>
-            </div>
-        </section>
-
-        <h2 class="govuk-heading-s">
-            Pupil numbers
-        </h2>
-
-        <section class="app-summary-card govuk-!-margin-bottom-7">
-            <header class="app-summary-card__header">
-                <h2 class="app-summary-card__title">
-                    Pupil numbers
-                </h2>
-            </header>
-            <div class="app-summary-card__body">
-                <dl class="govuk-summary-list">
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Girls on roll
+                            School phase
                         </dt>
                         <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">48.7%</p>
+                            <p class="govuk-body">Primary</p>
                         </dd>
                         <!--Add change link if necessary based on needs-->
                         {# <dd class="govuk-summary-list__actions">
@@ -487,91 +303,124 @@
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Boys on roll
+                            Age range
                         </dt>
                         <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">51.3%</p>
+                            <p class="govuk-body">5 - 11 years old</p>
                         </dd>
                     </div>
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Pupils with a statement of special educational needs (SEN)
+                            Capacity
                         </dt>
                         <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">2.7%</p>
+                            <p class="govuk-body">420</p>
                         </dd>
                     </div>
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Pupils whose first language is not English
+                            NOR (% full)
                         </dt>
                         <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">2.7%</p>
+                            <p class="govuk-body">401 (95.47%)</p>
                         </dd>
                     </div>
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Pupils eligible for free school meal during the past 6 years
+                            PAN
                         </dt>
                         <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">16.8%</p>
-                        </dd>
-                    </div>
-                </dl>
-            </div>
-        </section>
-
-        <h2 class="govuk-heading-s">
-            Latest Ofsted judgement
-        </h2>
-
-        <section class="app-summary-card govuk-!-margin-bottom-7">
-            <header class="app-summary-card__header">
-                <h2 class="app-summary-card__title">
-                    Latest Ofsted judgement
-                </h2>
-            </header>
-            <div class="app-summary-card__body">
-                <dl class="govuk-summary-list">
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            School name
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Godmanchester Community Academy</p>
-                        </dd>
-                        <!--Add change link if necessary based on needs-->
-                        {# <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./set-dates/question-a">
-                            Change<span class="govuk-visually-hidden">outgoing trust</span>
-                        </a>
-                        </dd> #}
-                    </div>
-
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Ofsted Inspection date
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">13-09-17</p>
+                            <p class="govuk-body">60</p>
                         </dd>
                     </div>
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Overall Effectiveness
+                            PFI
                         </dt>
                         <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Good</p>
+                            <p class="govuk-body">No</p>
                         </dd>
                     </div>
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Achievement of Pupils
+                            Viability issue
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <p class="govuk-body">No</p>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Deficit
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <p class="govuk-body">No</p>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            School type
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <p class="govuk-body">Academy</p>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Dioceses % G or O
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <p class="govuk-body">Not applicable</p>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Distance to sponsor HQ
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <p class="govuk-body">1.5 miles (9 minutes)</p>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            MP (party)
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <p class="govuk-body">Jonathan Djanogly (Conservative party)</p>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Ofsted judgement date
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <p class="govuk-body">Good (04-07-13). Short inspection - 13-09-17</p>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Current framework
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <p class="govuk-body">No</p>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Achievement of pupil
                         </dt>
                         <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
                             <p class="govuk-body">Good</p>
@@ -589,7 +438,7 @@
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Behaviour and safety of Pupils
+                            Behaviour and safety of pupil
                         </dt>
                         <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
                             <p class="govuk-body">Outstanding</p>
@@ -598,52 +447,598 @@
 
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Leadership & Management
+                            Leadership and management
                         </dt>
                         <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
                             <p class="govuk-body">Good</p>
                         </dd>
                     </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Early years Provision
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Good</p>
-                        </dd>
-                    </div>
-                </dl>
-            </div>
-        </section>
+                    </dl>
+                </div>
+            </section>
+
+            <h2 class="govuk-heading-s">
+                Pupil numbers
+            </h2>
+
+            <section class="app-summary-card govuk-!-margin-bottom-7">
+                <header class="app-summary-card__header">
+                    <h2 class="app-summary-card__title">
+                        Pupil numbers
+                    </h2>
+                </header>
+                <div class="app-summary-card__body">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Girls on roll
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">48.7%</p>
+                            </dd>
+                            <!--Add change link if necessary based on needs-->
+                            {# <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./set-dates/question-a">
+                                Change<span class="govuk-visually-hidden">outgoing trust</span>
+                            </a>
+                            </dd> #}
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Boys on roll
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">51.3%</p>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Pupils with a statement of special educational needs (SEN)
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">2.7%</p>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Pupils whose first language is not English
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">2.7%</p>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Pupils eligible for free school meal during the past 6 years
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">16.8%</p>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+            <h2 class="govuk-heading-s">
+                Latest Ofsted judgement
+            </h2>
+
+            <section class="app-summary-card govuk-!-margin-bottom-7">
+                <header class="app-summary-card__header">
+                    <h2 class="app-summary-card__title">
+                        Latest Ofsted judgement
+                    </h2>
+                </header>
+                <div class="app-summary-card__body">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                School name
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">Godmanchester Community Academy</p>
+                            </dd>
+                            <!--Add change link if necessary based on needs-->
+                            {# <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./set-dates/question-a">
+                                Change<span class="govuk-visually-hidden">outgoing trust</span>
+                            </a>
+                            </dd> #}
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Ofsted Inspection date
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">13-09-17</p>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Overall Effectiveness
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">Good</p>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Achievement of Pupils
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">Good</p>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Quality of teaching
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">Good</p>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Behaviour and safety of Pupils
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">Outstanding</p>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Leadership & Management
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">Good</p>
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Early years Provision
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                                <p class="govuk-body">Good</p>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-l">
+                Key stage performance tables
+            </h2>
+            
+            {{ govukTable({
+                caption: "Key stage 1 – Godmanchester Community Academy",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                    {
+                        text: "Subjects"
+                    },
+                    {
+                        text: "2016",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2017",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018 national mean average percentage",
+                        format: "numeric",
+                        classes: 'govuk-!-width-one-quarter'
+                    }
+                ],
+                rows: [
+                    [
+                        {
+                            text: "Reading"
+                        },
+                        {
+                            text: "87%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "81%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "83%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "75%",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Writing"
+                        },
+                        {
+                            text: "92%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "91%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "85%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "70%",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Maths"
+                        },
+                        {
+                            text: "89%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "92%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "86%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "76%",
+                            format: "numeric"
+                        }
+                    ]
+                ]
+                }) }}
+        </div>
+    </div>
 
-        <h2 class="govuk-heading-m">
-            Generate head teacher board (HTB) template
-        </h2>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-6">
+            {{ govukTable({
+                caption: "Key stage 1 – Godmanchester Bridge Academy",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                    {
+                        text: "Subjects"
+                    },
+                    {
+                        text: "2016",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2017",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018 national mean average percentage",
+                        format: "numeric",
+                        classes: 'govuk-!-width-one-quarter'
+                    }
+                ],
+                rows: [
+                    [
+                        {
+                            text: "Reading"
+                        },
+                        {
+                            text: "100%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "80%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "75%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "75%",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Writing"
+                        },
+                        {
+                            text: "100%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "90%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "85%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "70%",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Maths"
+                        },
+                        {
+                            text: "0%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "81%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "96%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "76%",
+                            format: "numeric"
+                        }
+                    ]
+                ]
+                }) }}
+        </div>
+    </div>
 
-        <p class="govuk-body govuk-!-margin-bottom-6">
-            Review the information in this page and download HTB template for St.Wilfreds primary school.
-        </p>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-6">
+            {{ govukTable({
+                caption: "Key stage 1 – Gorefield primary school",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                    {
+                        text: "Subjects"
+                    },
+                    {
+                        text: "2016",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2017",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018 national mean average percentage",
+                        format: "numeric",
+                        classes: 'govuk-!-width-one-quarter'
+                    }
+                ],
+                rows: [
+                    [
+                        {
+                            text: "Reading"
+                        },
+                        {
+                            text: "81%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "0%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "73%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "75%",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Writing"
+                        },
+                        {
+                            text: "81%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "0%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "73%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "70%",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Maths"
+                        },
+                        {
+                            text: "94%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "0%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "94%",
+                            format: "numeric"
+                        },
+                        {
+                            text: "76%",
+                            format: "numeric"
+                        }
+                    ]
+                ]
+                }) }}
+        </div>
+    </div>
 
-        <form action="#" method="post" novalidate>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop govuk-!-margin-bottom-6">
+            {{ govukTable({
+                caption: "Key stage 1 – 0",
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: true,
+                head: [
+                    {
+                        text: "Subjects"
+                    },
+                    {
+                        text: "2016",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2017",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018",
+                        format: "numeric"
+                    },
+                    {
+                        text: "2018 national mean average percentage",
+                        format: "numeric",
+                        classes: 'govuk-!-width-one-quarter'
+                    }
+                ],
+                rows: [
+                    [
+                        {
+                            text: "Reading"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "75%",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Writing"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "70%",
+                            format: "numeric"
+                        }
+                    ],
+                    [
+                        {
+                            text: "Maths"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "?",
+                            format: "numeric"
+                        },
+                        {
+                            text: "76%",
+                            format: "numeric"
+                        }
+                    ]
+                ]
+                }) }}
+        </div>
+    </div>
 
-            <input type="hidden" name="answers-checked" value="true">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-            <div class="govuk-button-group">
-                <button class="govuk-button" data-module="govuk-button">
-                    Download HTB template
-                </button>
-                <p class="govuk-body">
-                    <a href="/version-4/dashboard-home" class="govuk-link govuk-link--no-visited-state">
-                        Save and return to this project later
-                    </a>
-                </p>
-            </div>
-        </form>
+            <h2 class="govuk-heading-l">
+                Generate head teacher board (HTB) template
+            </h2>
 
+            <p class="govuk-body govuk-!-margin-bottom-6">
+                Review the information in this page and download HTB template for St.Wilfreds primary school.
+            </p>
+
+            <form action="#" method="post" novalidate>
+
+                <input type="hidden" name="answers-checked" value="true">
+
+                <div class="govuk-button-group">
+                    <button class="govuk-button" data-module="govuk-button">
+                        Download HTB template
+                    </button>
+                    <p class="govuk-body">
+                        <a href="/version-4/dashboard-home" class="govuk-link govuk-link--no-visited-state">
+                            Save and return to this project later
+                        </a>
+                    </p>
+                </div>
+            </form>
+
+        </div>
     </div>
 
 {% endblock %}
