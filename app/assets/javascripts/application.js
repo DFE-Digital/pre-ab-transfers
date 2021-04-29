@@ -9,13 +9,17 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
 
+$(document).ready(function () {
+  window.MOJFrontend.initAll()
+})
+
 // Submit form when any change detected
-$('.js-auto-submit').on('change', function(){
+$('.js-auto-submit').on('change', function () {
   $(this).closest('form').submit();
 });
 
 
-if ($('.js-bulk-menu').length){
+if ($('.js-bulk-menu').length) {
   new MOJFrontend.ButtonMenu({
     container: $('.js-bulk-menu .moj-button-menu'),
     mq: '(min-width: 200em)',

@@ -1,0 +1,46 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Write the rationale for the project – Transfer an academy – GOV.UK" %}
+
+{% set relatedNavigation = 'true' %}
+
+
+{% block formQuestions %}
+  {% if data['returnToTaskList'] === 'yes' %}
+    <form action="../st-wilfreds-ps" method="post" novalidate>
+  {% else %}
+    <form action="../features-of-a-transfer" method="post" novalidate>
+  {% endif %}
+    <input type="text" hidden name="returnToTaskList" value="no" />
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-m">
+          Reference number: AS_6759840
+      </span>
+      <h1 class="govuk-heading-l">
+          Write the rationale for the project
+      </h1>
+    {% endset %}
+
+    {{ govukTextarea({
+      id: 'rationale-for-project',
+      name: 'rationale-for-project',
+      attributes: {
+      'data-module': 'moj-rich-text-editor',
+      'data-moj-rich-text-editor-toolbar': 'bold,italic,underline,bullets,numbers'
+      },
+      hint: {
+        text: "Edit the school's rationale to add your own analysis"
+      },
+      label: {
+      html: pageHeading,
+      classes: 'govuk-!-font-weight-bold'
+      }
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}
