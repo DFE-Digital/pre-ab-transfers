@@ -221,6 +221,59 @@
         </section>
 
         <h2 class="govuk-heading-s">
+            Rationale
+        </h2>
+
+        <section class="app-summary-card govuk-!-margin-bottom-7">
+            <header class="app-summary-card__header">
+                <h2 class="app-summary-card__title">
+                    Rationale
+                </h2>
+            </header>
+            <div class="app-summary-card__body">
+                <dl class="govuk-summary-list">
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Rationale for project
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                        {% if data['project-rationale']%}
+                            <p class="govuk-body">{{data['project-rationale'] | safe }}</p>
+                        {% else %}
+                            <span class="empty">Empty</span>
+                        {% endif %}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="./rationale/question-a">
+                            Change<span class="govuk-visually-hidden">outgoing trust</span>
+                        </a>
+                        </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Rationale for the trust or sponsor
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                        {% if data['trust-rationale']%}
+                            <p class="govuk-body">{{data['trust-rationale']}}</p>
+                        {% else %} 
+                            <span class="empty">Empty</span>
+                        {% endif %}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="./rationale/question-b">
+                            Change<span class="govuk-visually-hidden">reason for transfer</span>
+                        </a>
+                        </dd>
+                    </div>
+
+                </dl>
+            </div>
+        </section>
+
+        <h2 class="govuk-heading-s">
             Academy performance
         </h2>
 
@@ -563,6 +616,34 @@
                 </dl>
             </div>
         </section>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-heading-m">
+            Generate head teacher board (HTB) template
+        </h2>
+
+        <p class="govuk-body govuk-!-margin-bottom-6">
+            Review the information in this page and download HTB template for St.Wilfreds primary school.
+        </p>
+
+        <form action="#" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Download HTB template
+                </button>
+                <p class="govuk-body">
+                    <a href="/version-4/dashboard-home" class="govuk-link govuk-link--no-visited-state">
+                        Save and return to this project later
+                    </a>
+                </p>
+            </div>
+        </form>
+
     </div>
 
 {% endblock %}

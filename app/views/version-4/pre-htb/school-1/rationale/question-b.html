@@ -1,6 +1,6 @@
 {% extends "version-4/includes/form-template.html" %}
 
-{% set pageTitle = "Write the rationale for the project – Transfer an academy – GOV.UK" %}
+{% set pageTitle = "Write the rationale for the trust or sponsor – Transfer an academy – GOV.UK" %}
 
 {% set relatedNavigation = 'true' %}
 
@@ -13,20 +13,20 @@
           Reference number: AS_6759840
       </span>
       <h1 class="govuk-heading-l">
-          Write the rationale for the project
+         Write the rationale for the trust or sponsor
       </h1>
     {% endset %}
 
     {{ govukTextarea({
-      id: 'project-rationale',
-      name: 'project-rationale',
+      id: 'trust-rationale',
+      name: 'trust-rationale',
       rows: "20",
       attributes: {
       'data-module': 'moj-rich-text-editor',
       'data-moj-rich-text-editor-toolbar': 'bold,italic,underline,bullets,numbers'
       },
       hint: {
-        text: "Edit the school's rationale to add your own analysis"
+        text: "Explain why the trust is a good match for the school."
       },
       label: {
       html: pageHeading,
