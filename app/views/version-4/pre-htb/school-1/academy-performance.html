@@ -38,11 +38,7 @@
                         School phase
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                    {% if data['#']%}
-                        <p class="govuk-body">{{data['#']}}</p>
-                    {% else %} 
-                        <span class="empty">Empty</span>
-                    {% endif %}
+                        <p class="govuk-body">Primary</p>
                     </dd>
                     <!--Add change link if necessary based on needs-->
                     {# <dd class="govuk-summary-list__actions">
@@ -57,7 +53,7 @@
                         Age range
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">5 - 11 years old</p>
                     </dd>
                 </div>
 
@@ -66,7 +62,7 @@
                         Capacity
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">420</p>
                     </dd>
                 </div>
 
@@ -75,7 +71,7 @@
                         NOR (% full)
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">401 (95.47%)</p>
                     </dd>
                 </div>
 
@@ -84,7 +80,7 @@
                         PAN
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">60</p>
                     </dd>
                 </div>
 
@@ -93,7 +89,7 @@
                         PFI
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">No</p>
                     </dd>
                 </div>
 
@@ -102,7 +98,7 @@
                         Viability issue
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">No</p>
                     </dd>
                 </div>
 
@@ -111,7 +107,7 @@
                         Deficit
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">No</p>
                     </dd>
                 </div>
 
@@ -120,7 +116,7 @@
                         School type
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">Academy</p>
                     </dd>
                 </div>
 
@@ -129,7 +125,7 @@
                         Dioceses % G or O
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">Not applicable</p>
                     </dd>
                 </div>
 
@@ -138,7 +134,7 @@
                         Distance to sponsor HQ
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">1.5 miles (9 minutes)</p>
                     </dd>
                 </div>
 
@@ -147,7 +143,7 @@
                         MP (party)
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">Jonathan Djanogly (Conservative party)</p>
                     </dd>
                 </div>
 
@@ -156,7 +152,7 @@
                         Ofsted judgement date
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">Good (04-07-13). Short inspection - 13-09-17</p>
                     </dd>
                 </div>
 
@@ -165,7 +161,7 @@
                         Current framework
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">No</p>
                     </dd>
                 </div>
 
@@ -174,7 +170,7 @@
                         Achievement of pupil
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">Good</p>
                     </dd>
                 </div>
 
@@ -183,7 +179,7 @@
                         Quality of teaching
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">Good</p>
                     </dd>
                 </div>
 
@@ -192,7 +188,7 @@
                         Behaviour and safety of pupil
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">Outstanding</p>
                     </dd>
                 </div>
 
@@ -201,13 +197,13 @@
                         Leadership and management
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <span class="empty">Empty</span>
+                        <p class="govuk-body">Good</p>
                     </dd>
                 </div>
         
             </dl>
 
-            <form action="./st-wilfreds-ps" method="post" novalidate>
+            <form action="./pupil-number" method="post" novalidate>
 
             <input type="hidden" name="answers-checked" value="true">
 
