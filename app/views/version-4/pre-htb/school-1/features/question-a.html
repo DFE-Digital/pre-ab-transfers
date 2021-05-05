@@ -6,12 +6,7 @@
 
 
 {% block formQuestions %}
-  {% if data['returnToTaskList'] === 'yes' %}
-    <form action="../st-wilfreds-ps" method="post" novalidate>
-  {% else %}
-    <form action="../features-of-a-transfer" method="post" novalidate>
-  {% endif %}
-    <input type="text" hidden name="returnToTaskList" value="no" />
+    <form action="./question-b" method="post" novalidate>
     <!--page heading with caption include-->
     {% set pageHeading %}
       <span class="govuk-caption-m">
