@@ -1,0 +1,70 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Select the incoming trust – Transfer an academy – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./check-trust-academy-summary" method="post" novalidate>
+        {{ govukRadios({
+            idPrefix: "outgoing-trust",
+            name: "outgoing-trust-id",
+            fieldset: {
+                legend: {
+                text: "Select the incoming trust",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+                }
+            },
+            items: [
+                {
+                    value: "1",
+                    text: "Settlebeck School Academy Trust"
+                },
+                {
+                    value: "3",
+                    text: "Burnt Ash Primary School"
+                },
+                {
+                    value: "5",
+                    text: "The Tenax Schools Trust"
+                },
+                {
+                    value: "15",
+                    text: "Woodbrook Vale School"
+                },
+                {
+                    value: "17",
+                    text: "Highworth Warneford School"
+                },
+                {
+                    value: "19",
+                    text: "Icknield High School"
+                },
+                {
+                    value: "21",
+                    text: "Beverley Grammar School"
+                },
+                {
+                    value: "23",
+                    text: "Trinity Church Of England High School"
+                },
+                {
+                    value: "25",
+                    text: "St Patrick's Catholic Primary School"
+                },
+                {
+                    value: "27",
+                    text: "Webster Primary School"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue"
+        }) }}
+    </form>
+
+{% endblock %}
+
+
+
