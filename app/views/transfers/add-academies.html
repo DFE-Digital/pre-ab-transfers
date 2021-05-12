@@ -12,12 +12,21 @@ getTrustById(data['outgoing-trust-id']) %}
     <div class="govuk-grid-column-two-thirds">
       <form action="/transfers/incoming.html" method="get" class="form">
         <div class="govuk-form-group">
-          {{ govukCheckboxes({ idPrefix: "academies", name:
-          "outgoing-academies", fieldset: { legend: { text: "Add the
-          transferring academies", isPageHeading: true, classes:
-          "govuk-fieldset__legend--l" } }, hint: { text: "Select all the
-          academies that are transferring" }, items: trust |
-          trustAcademiesToCheckboxes }) }}
+          {{ govukCheckboxes({ 
+            idPrefix: "academies",
+            name: "outgoing-academies",
+            fieldset: {
+              legend: { 
+              text: "Add the transferring academies",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l" 
+              } 
+            }, 
+            hint: { 
+              text: "Select all the academies that are transferring" 
+            }, 
+            items: trust | trustAcademiesToCheckboxes 
+          }) }}
         </div>
         <button role="button" draggable="false" class="govuk-button">
           Save and continue

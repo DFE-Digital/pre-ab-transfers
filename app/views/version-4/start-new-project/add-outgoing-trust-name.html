@@ -1,0 +1,29 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Add the outgoing trust name – Transfer an academy – GOV.UK" %}
+
+
+{% block formQuestions %}
+    <form action="./select-outgoing-trust" method="post" novalidate>
+        {{ govukInput({
+            label: {
+                text: "Add the outgoing trust name",
+                classes: "govuk-label--xl",
+                isPageHeading: true
+            },
+            hint: {
+                text: "Search by name, trust reference number or companies house number"
+            },
+            id: "event-name",
+            name: "event-name"
+        }) }}
+
+        {{ govukButton({
+            text: "Search"
+        }) }}
+    </form>
+
+{% endblock %}
+
+
+
