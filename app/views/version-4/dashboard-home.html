@@ -32,12 +32,12 @@
           Pre HTB
       </h2>
 
-      {% for project in data['records'] | slice(4) | first %}
+      {% for project in data['records'] %}
         <div class="app-application-card">
           <div class="app-application-card_col">
             <div>
               <h3 class="govuk-heading-m">
-                <a class="govuk-link govuk-!-margin-right-1" href="./pre-htb/school-1/st-wilfreds-ps.html">
+                <a class="govuk-link govuk-!-margin-right-1" href="pre-htb/school-1/task-list.html?project-id={{ project.id }}">
                   {{ project.name }}
                 </a>
                 <span class="govuk-caption-m govuk-!-display-inline">

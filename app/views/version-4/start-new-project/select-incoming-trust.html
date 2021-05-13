@@ -15,7 +15,7 @@
                 classes: "govuk-fieldset__legend--xl"
                 }
             },
-            items: data['trusts'] | trustsToCheckboxes
+            items: data['trusts'] | filterTrustsBySearchString(data['incoming-trust-query']) | trustsToCheckboxes
         }) }}
 
         {{ govukButton({

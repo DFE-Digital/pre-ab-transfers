@@ -29,7 +29,7 @@ filters.filterTrustsBySearchString = (trusts, searchString) => {
   searchString = searchString.toLowerCase()
   return trusts.filter(trust => {
     return trust.trust_name.toLowerCase().includes(searchString) ||
-      trust.trust_reference_number.toLowerCase().includes(searchString) ||
+      trust.ukprn.toLowerCase().includes(searchString) ||
       trust.companies_house_number.toLowerCase().includes(searchString)
   })
 }
