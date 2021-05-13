@@ -56,10 +56,11 @@ filters.trustAddressToHtml = (address) => {
 }
 
 filters.trustsToCheckboxes = (trusts) => {
-  const trustToHtml = (trust) => `<p class="govuk-body">${trust.trust_name} (${trust.ukprn})</p>` +
-    `<p class="govuk-body">Companies house number: ${trust.companies_house_number}</p>`
-
-  return trusts.map(trust => ({ value: trust.id, html: trustToHtml(trust) }))
+  return trusts.map(trust => ({
+    value: trust.id,
+    html: `${trust.trust_name} (${trust.ukprn})`,
+    hint: { text: `Companies house number: ${trust.companies_house_number}` }
+  }))
 }
 
 filters.trustAcademiesToCheckboxes = (trust) => {
