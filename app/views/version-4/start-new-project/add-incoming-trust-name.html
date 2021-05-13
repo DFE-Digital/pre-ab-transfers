@@ -8,14 +8,13 @@
         {% set outgoingTrust = data['trusts'] | getTrustById(data['outgoing-trust-id']) %}
 
         {% set pageHeading %}
-            <h1 class="govuk-label--xl">
-                Add the incoming trust name for {{ outgoingTrust.trust_name }}
-            </h1>
+            Add the incoming trust name for {{ outgoingTrust.trust_name }}
         {% endset %}
 
         {{ govukInput({
             label: {
                 html: pageHeading,
+                classes: "govuk-label--xl",
                 isPageHeading: true
             },
             hint: {
