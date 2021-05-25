@@ -1,0 +1,55 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set pageTitle = "Recommendation – Transfer an academy – GOV.UK" %}
+
+{% set relatedNavigation = 'true' %}
+
+
+{% block formQuestions %}
+  <span class="govuk-caption-m">
+    Reference number: AS_6759840
+  </span>
+  <h1 class="govuk-heading-l">
+    Recommendation
+  </h1>
+
+  <form action="../general-information" method="post" novalidate>
+
+    {{ govukTextarea({
+      name: "recommendation",
+      id: "recommendation",
+      label: {
+        text: "What is the recommendation for this project?",
+        classes: "govuk-label--m"
+      },
+      classes: "govuk-!-margin-bottom-9"
+    }) }}
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "ao-required",
+      name: "ao-required",
+      fieldset: {
+        legend: {
+          text: "Is academy order (AO) required?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "Yes",
+          text: "Yes"
+        },
+        {
+          value: "No",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}
