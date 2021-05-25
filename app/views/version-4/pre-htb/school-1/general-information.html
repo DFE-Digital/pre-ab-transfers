@@ -37,14 +37,14 @@
                         Recommendation
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['Who initiated the academy transfer']%}
-                        {{data['Who initiated the academy transfer']}}
+                    {% if data['recommendation']%}
+                        <p class="govuk-body">{{data['recommendation']}}</p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./features/question-a?returnToTaskList=yes">
+                    <a class="govuk-link" href="./general-information/question-a">
                         Change<span class="govuk-visually-hidden">outgoing trust</span>
                     </a>
                     </dd>
@@ -55,17 +55,16 @@
                         Author
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['rdd or esfa intervention']%}
-                        <p class="govuk-body">{{data['rdd or esfa intervention']}}</p>
-                        <p class="govuk-body">{{data['more-detail']}}</p>
+                    {% if data['ao-required']%}
+                        <p class="govuk-body">{{data['ao-required']}}</p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./features/question-b">
-                        Change<span class="govuk-visually-hidden">reason for transfer</span>
-                    </a>
+                        <a class="govuk-link" href="./general-information/question-a">
+                            Change<span class="govuk-visually-hidden">reason for transfer</span>
+                        </a>
                     </dd>
                 </div>
 
