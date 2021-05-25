@@ -25,26 +25,14 @@
       classes: "govuk-!-margin-bottom-9"
     }) }}
 
-    {{ govukRadios({
-      classes: "govuk-radios--inline",
-      idPrefix: "ao-required",
-      name: "ao-required",
-      fieldset: {
-        legend: {
-          text: "Is academy order (AO) required?",
-          classes: "govuk-fieldset__legend--m"
-        }
+    {{ govukInput({
+      label: {
+        text: "Enter the name of the author responsible for HTB paper",
+        classes: "govuk-label--m"
       },
-      items: [
-        {
-          value: "Yes",
-          text: "Yes"
-        },
-        {
-          value: "No",
-          text: "No"
-        }
-      ]
+      classes: "govuk-!-width-two-thirds",
+      id: "name-of-author",
+      name: "name-of-author"
     }) }}
 
     {{ govukButton({
