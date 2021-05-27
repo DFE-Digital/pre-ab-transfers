@@ -34,7 +34,7 @@
                     <dt class="govuk-summary-list__key">
                         Rationale for project
                     </dt>
-                    <dd class="govuk-summary-list__value">
+                    <dd class="govuk-summary-list__value govuk-!-width-full">
                     {% if data['project-rationale']%}
                         <p class="govuk-body">{{data['project-rationale'] | safe }}</p>
                     {% else %}
@@ -54,7 +54,7 @@
                     </dt>
                     <dd class="govuk-summary-list__value">
                     {% if data['trust-rationale']%}
-                        <p class="govuk-body">{{data['trust-rationale']}}</p>
+                        <p class="govuk-body govuk-!-width-full">{{data['trust-rationale']}}</p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
