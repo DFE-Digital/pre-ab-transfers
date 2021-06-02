@@ -85,19 +85,74 @@
                 </div>
         
             </dl>
-
-            <form action="./st-wilfreds-ps" method="post" novalidate>
-
-            <input type="hidden" name="answers-checked" value="true">
-
-            <div class="govuk-button-group">
-                <button class="govuk-button" data-module="govuk-button">
-                    Continue
-                </button>
-            </div>
-
-            </form>           
+       
         </div>
+
+        {% if data['pupil-number-more-detail'] and data['update-pupil-number'] !='yes'  %}
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+            <h2 class="govuk-heading-m">
+                Additional information
+            </h2>
+            <p class="govuk-body">
+                This information will populate into your HTB template under the school performance (Ofsted information) section.
+            </p>
+        </div>
+
+        <div class ="govuk-grid-column-full">
+
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt id="additional-information" class="govuk-summary-list__key">
+                        Additional information
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['pupil-number-more-detail'] %}
+                            {{data['pupil-number-more-detail']}}
+                        {% else %}
+                            <span class="empty">Empty</span>
+                        {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="/version-4/pre-htb/school-1/pupil-number?update-pupil-number=yes#pupil-number-more-detail">
+                            Change<span class="govuk-visually-hidden"> name</span>
+                        </a>
+                    </dd>
+                </div>
+            </dl>
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+                <button class="govuk-button" data-module="govuk-button">
+                    Confirm and continue
+                </button>
+            </form>
+        </div>
+
+
+        {% else %}
+        <div class="govuk-grid-column-two-thirds">
+            <form action="/version-4/pre-htb/school-1/pupil-number#additional-information" method="post" novalidate>
+                <input type="text" name="update-pupil-number" value="no" hidden> 
+                {{ govukTextarea({
+                    name: "pupil-number-more-detail",
+                    id: "pupil-number-more-detail",
+                    label: {
+                        text: "Additional information (optional)",
+                        classes: "govuk-label--m",
+                        isPageHeading: true
+                    },
+                    value: data['pupil-number-more-detail'],
+                    hint: {
+                        text: "This information will populate into your HTB template under the school performance (Ofsted information) section."
+                    }
+                }) }}
+
+                <button class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </button>
+            </form>
+        </div>
+        {% endif %}
+
     </div>
 
 {% endblock %}
