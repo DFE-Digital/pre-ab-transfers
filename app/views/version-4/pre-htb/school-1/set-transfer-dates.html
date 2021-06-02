@@ -71,8 +71,10 @@
                         Set HTB date
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['set-htb-date'] %}
-                        <p class="govuk-body">{{data['set-htb-date']}}</p>
+                    {% if data['set-htb-date-day'] and data['set-htb-date-month'] and data['set-htb-date-year'] %}
+                        <p class="govuk-body">
+                            {{ data['set-htb-date-day'] }} / {{ data['set-htb-date-month'] }} / {{ data['set-htb-date-year'] }}
+                        </p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
