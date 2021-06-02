@@ -2,6 +2,8 @@
 
 {% set pageTitle = "Download head teacher board (htb) template – Transfer an academy – GOV.UK" %}
 
+{% set projectData = data['records'][0] %}
+
 {% block beforeContent %}
   {% include "version-2/includes/phase-banner.html" %}
   <a class="govuk-back-link" href="./preview-htb-template">Back to preview</a>
@@ -11,11 +13,13 @@
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9">
-      <span class="govuk-caption-l">Reference number: AS_6759840</span>
+      <span class="govuk-caption-l">{{ projectData.name }}</span>
       <h1 class="govuk-heading-xl">
-        Generate headteacher board (HTB) documents
+        Download headteacher board (HTB) documents
       </h1>
-      <p class="gouk-body">You can make additional changes to the template after downloading.</p>
+      {{ govukInsetText({
+        text: "Save these documents in the school's Sharepoint file."
+      }) }}
 
       {% include "version-4/includes/attachment.html" %}
     </div>
