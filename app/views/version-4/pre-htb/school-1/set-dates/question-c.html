@@ -17,7 +17,7 @@
       </h1>
     {% endset %}
 
-    {{ govukRadios({
+    {# {{ govukRadios({
       idPrefix: "set-htb-date",
       name: "set-htb-date",
       fieldset: {
@@ -76,6 +76,21 @@
           text: "Wednesday 1 December 2021"
         }
       ]
+    }) }} #}
+
+    {{ govukDateInput({
+      id: "set-htb-date",
+      name: "set-htb-date",
+      fieldset: {
+        legend: {
+          html: pageHeading,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "For example, 12 11 2021. You can change this date later."
+      }
     }) }}
 
     {{ govukButton({
