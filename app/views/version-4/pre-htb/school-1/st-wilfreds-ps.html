@@ -149,26 +149,21 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-heading-m">
-        Preview HTB template
+        Preview or generate HTB document
       </h2>
 
       <p class="govuk-body govuk-!-margin-bottom-6">
-        Preview your HTB template on the next page, then you can generate it into a Word document.
+        Preview your HTB template before you generate it into a Word document, or you can generate the template without previewing it.
       </p>
 
-      <form action="./preview-htb-template" method="post" novalidate>
-
-      <input type="hidden" name="answers-checked" value="true">
-
       <div class="govuk-button-group">
-        <button class="govuk-button" data-module="govuk-button">
+        <a href="./preview-htb-template" role="button" draggable="false" data-module="govuk-button" class="govuk-button">
           Preview HTB template
-        </button>
-        {# <p class="govuk-body">
-          <a href="/version-4/dashboard-home" class="govuk-link govuk-link--no-visited-state">
-            Save and return to this project later
-          </a>
-        </p> #}
+        </a>
+        {# <span class="govuk-body govuk-!-margin-right-3">or</span> #}
+        <a href="/version-4/pre-htb/school-1/download" role="button" draggable="false" class="govuk-button govuk-button--secondary">
+          Generate HTB document
+        </a>
       </div>
       </form>
 
