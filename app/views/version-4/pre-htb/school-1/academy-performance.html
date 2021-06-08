@@ -12,15 +12,17 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
-            <span class="govuk-caption-m">
+            <span class="govuk-caption-l">
                 {{ projectData.reference }}
             </span>
             <h1 class="govuk-heading-l">
-                Academy performance
+                General information and academy performance
             </h1>
+            <!--Removing this for mvp as we are not yet sure what will be useful in a given context.
             <h2 class="govuk-heading-m">
                 Outgoing trust: <span class="govuk-!-font-weight-regular govuk-!-font-size-24">{{ projectData.name }}</span>
             </h2>
+            <-->
             <p class="govuk-body">
                 This information is pre-populated from TRAMS and the school's application form.
             </p>
@@ -259,7 +261,7 @@
                     },
                     value: data['academy-performance-more-detail'],
                     hint: {
-                        text: "This information will populate into your HTB template under the school performance (Ofsted information) section."
+                        text: "This information will populate into your HTB template under the academy performance section."
                     }
                 }) }}
 
