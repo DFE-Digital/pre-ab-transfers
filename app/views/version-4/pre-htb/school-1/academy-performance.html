@@ -207,7 +207,7 @@
 
         </div>
 
-        {% if data['academy-performance-more-detail'] and data['update-additional-information'] !='yes'  %}
+        {% if data['submitted-academy-performance'] and data['update-additional-information'] !='yes'  %}
 
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
             <h2 class="govuk-heading-m">
@@ -250,6 +250,7 @@
         {% else %}
         <div class="govuk-grid-column-two-thirds">
             <form action="/version-4/pre-htb/school-1/academy-performance#additional-information" method="post" novalidate>
+                <input type="text" name="submitted-academy-performance" value="yes" hidden>
                 <input type="text" name="update-additional-information" value="no" hidden> 
                 {{ govukTextarea({
                     name: "academy-performance-more-detail",
