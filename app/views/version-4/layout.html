@@ -57,24 +57,30 @@
 {% block header %}
   {% include "_includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
-  {% set headerClass = 'app-dark-header' if data.settings.useDarkHeader else 'app-light-header' %}
-  {{ govukHeader({
-    homepageUrl: "/",
-    productName: serviceName,
-    serviceUrl: "/",
-    classes: headerClass,
-    containerClasses: "govuk-width-container",
-    navigation: [
-      {
-        href: "#1",
-        text: "Your account"
-      } if false,
-      {
-        href: "/transfers/sign-in-1",
-        text: "Sign out"
-      }
-    ] if not hideNav
-  }) }}
+  <header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo govuk-!-width-two-thirds">
+      <a href="#" class="govuk-header__link govuk-header__link--homepage">
+          <span class="govuk-header__logotype-text">
+            Manage trusts and academy schools
+            <!--Transfer an academy-->
+          </span>
+      </a>
+    </div>
+    <div class="govuk-header__content govuk-!-width-one-quarter">
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation " aria-label="Navigation menu">
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="#4">
+              Signout
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
 
 {% endblock %}
 
