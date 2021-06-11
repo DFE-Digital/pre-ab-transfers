@@ -9,12 +9,10 @@
   <form action="../rationale" method="post" novalidate>
     <!--page heading with caption include-->
     {% set pageHeading %}
-      <span class="govuk-caption-m">
+      <span class="govuk-caption-l">
           St Wilfred's primary school
       </span>
-      <h1 class="govuk-heading-l">
-         Write the rationale for the trust or sponsor
-      </h1>
+      Write the rationale for the trust or sponsor
     {% endset %}
 
     {{ govukTextarea({
@@ -25,8 +23,9 @@
         text: "Explain why the incoming trust is a good match for the academy."
       },
       label: {
-      html: pageHeading,
-      classes: 'govuk-!-font-weight-bold'
+        html: pageHeading,
+        isPageHeading: true,
+        classes: "govuk-label--l"
       }
     }) }}
 

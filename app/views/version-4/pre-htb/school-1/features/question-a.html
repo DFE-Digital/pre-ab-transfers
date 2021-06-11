@@ -9,12 +9,10 @@
     <form action="../features-of-a-transfer" method="post" novalidate>
     <!--page heading with caption include-->
     {% set pageHeading %}
-      <span class="govuk-caption-m">
+      <span class="govuk-caption-l">
           St Wilfred's primary school
       </span>
-      <h1 class="govuk-heading-l">
-          Who initiated the academy transfer?
-      </h1>
+      Who initiated the academy transfer?
     {% endset %}
 
     {{ govukRadios({
@@ -23,7 +21,8 @@
       fieldset: {
         legend: {
           html: pageHeading,
-          isPageHeading: true
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
         }
       },
       items: [

@@ -9,12 +9,10 @@
   <form action="../rationale" method="post" novalidate>
     <!--page heading with caption include-->
     {% set pageHeading %}
-      <span class="govuk-caption-m">
+      <span class="govuk-caption-l">
           St Wilfred's primary school
       </span>
-      <h1 class="govuk-heading-l">
-          Write the rationale for the project
-      </h1>
+      Write the rationale for the project
     {% endset %}
 
     {{ govukTextarea({
@@ -26,7 +24,8 @@
       },
       label: {
         html: pageHeading,
-        classes: 'govuk-!-font-weight-bold'
+        isPageHeading: true,
+        classes: "govuk-label--l"
       }
     }) }}
 
