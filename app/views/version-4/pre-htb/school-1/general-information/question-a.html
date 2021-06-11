@@ -15,18 +15,35 @@
 
   <form action="../general-information" method="post" novalidate>
 
-    {{ govukTextarea({
+    {{ govukRadios({
+      idPrefix: "recommendation",
       name: "recommendation",
-      id: "recommendation",
-      label: {
-        text: "What is the recommendation for this project?",
-        classes: "govuk-label--m"
-      }
+      fieldset: {
+        legend: {
+          text: "What is the recommendation for this project?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "Approve",
+          text: "Approve"
+        },
+        {
+          value: "Defer",
+          text: "Defer"
+        },
+        {
+          value: "Decline",
+          text: "Decline"
+        }
+      ]
     }) }}
 
     {{ govukInput({
       label: {
-        text: "Enter the name of the author responsible for HTB paper",
+        text: "Enter the full name of the author of this headteacher board (HTB) template",
         classes: "govuk-label--m"
       },
       classes: "govuk-!-width-two-thirds",
