@@ -8,12 +8,10 @@
   <form action="../features-of-a-transfer" method="post" novalidate>
     <!--page heading with caption include-->
     {% set pageHeading %}
-      <span class="govuk-caption-m">
+      <span class="govuk-caption-l">
           St Wilfred's primary school
       </span>
-      <h1 class="govuk-heading-l">
-          What type of transfer is it?
-      </h1>
+      What type of transfer is it?
     {% endset %}
 
     {% set typeOfTransfer %}
@@ -35,7 +33,8 @@
       fieldset: {
         legend: {
           html: pageHeading,
-          isPageHeading: true
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
         }
       },
       items: [
