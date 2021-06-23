@@ -35,13 +35,13 @@
             <section class="app-summary-card govuk-!-margin-bottom-7">
                 <header class="app-summary-card__header">
                     <h2 class="app-summary-card__title">
-                        Features of the transfer
+                        Features of the transfer details
                     </h2>
                 </header>
                 <div class="app-summary-card__body">
                     <dl class="govuk-summary-list">
                         <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                            <dt class="govuk-summary-list__key">
                                 Who initiated this academy transfer?
                             </dt>
                             <dd class="govuk-summary-list__value">
@@ -59,7 +59,7 @@
                         </div>
 
                         <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                            <dt class="govuk-summary-list__key">
                                 Reason for transfer
                             </dt>
                             <dd class="govuk-summary-list__value">
@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                            <dt class="govuk-summary-list__key">
                                 Type of transfer
                             </dt>
                             <dd class="govuk-summary-list__value">
@@ -106,14 +106,14 @@
             <section class="app-summary-card govuk-!-margin-bottom-7">
                 <header class="app-summary-card__header">
                     <h2 class="app-summary-card__title">
-                        Set transfer dates
+                        Set transfer dates details
                     </h2>
                 </header>
                 <div class="app-summary-card__body">
                     <dl class="govuk-summary-list">
 
                         <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                            <dt class="govuk-summary-list__key">
                                 Date when the transfer was first discussed
                             </dt>
                             <dd class="govuk-summary-list__value">
@@ -131,7 +131,7 @@
                         </div>
 
                         <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                            <dt class="govuk-summary-list__key">
                                 Target date for transfer
                             </dt>
                             <dd class="govuk-summary-list__value">
@@ -149,7 +149,7 @@
                         </div>
 
                         <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                            <dt class="govuk-summary-list__key">
                                 Set HTB date
                             </dt>
                             <dd class="govuk-summary-list__value">
@@ -176,14 +176,14 @@
             <section class="app-summary-card govuk-!-margin-bottom-7">
                 <header class="app-summary-card__header">
                     <h2 class="app-summary-card__title">
-                        Benefits and other factors
+                        Benefits and other factors details
                     </h2>
                 </header>
                 <div class="app-summary-card__body">
                     <dl class="govuk-summary-list">
 
                         <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                            <dt class="govuk-summary-list__key">
                                 What are the benefits the transfer intended to bring?
                             </dt>
                             <dd class="govuk-summary-list__value">
@@ -201,7 +201,7 @@
                         </div>
 
                         <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular">
+                            <dt class="govuk-summary-list__key">
                                 Are there any other factors to consider during this transfer?
                             </dt>
                             <dd class="govuk-summary-list__value">
@@ -229,7 +229,7 @@
             <section class="app-summary-card govuk-!-margin-bottom-7">
                 <header class="app-summary-card__header">
                     <h2 class="app-summary-card__title">
-                        Rationale
+                        Rationale details
                     </h2>
                 </header>
                 <div class="app-summary-card__body">
@@ -276,185 +276,330 @@
             </section>
 
             <h2 class="govuk-heading-s">
-                Academy performance
+                Academy and trust information and project dates
             </h2>
 
             <section class="app-summary-card govuk-!-margin-bottom-7">
                 <header class="app-summary-card__header">
                     <h2 class="app-summary-card__title">
-                        Academy performance
+                        Academy and trust information and project dates
                     </h2>
                 </header>
                 <div class="app-summary-card__body">
                     <dl class="govuk-summary-list">
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            School phase
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Primary</p>
-                        </dd>
-                        <!--Add change link if necessary based on needs-->
-                        {# <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="./set-dates/question-a">
-                            Change<span class="govuk-visually-hidden">outgoing trust</span>
-                        </a>
-                        </dd> #}
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Recommendation
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['recommendation']%}
+                                <p class="govuk-body">{{data['recommendation']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="./general-information/question-a">
+                                    Change<span class="govuk-visually-hidden">outgoing trust</span>
+                                </a>
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Age range
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">5 - 11 years old</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Author
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['name-of-author']%}
+                                <p class="govuk-body">{{data['name-of-author']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="./general-information/question-a">
+                                    Change<span class="govuk-visually-hidden">reason for transfer</span>
+                                </a>
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Capacity
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">420</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                HTB date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['set-htb-date']%}
+                                <p class="govuk-body">{{data['set-htb-date']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__value">
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            NOR (% full)
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">401 (95.47%)</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Project name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">{{ projectData.name }}</p>
+                            </dd>
+                            <dd class="govuk-summary-list__value">
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            PAN
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">60</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Sponsor name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">{{ sponsorName.trust_name }}</p>
+                            </dd>
+                            <dd class="govuk-summary-list__value">
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            PFI
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">No</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Academy type and route
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Academy converter</p>
+                            </dd>
+                            <dd class="govuk-summary-list__value">
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Viability issue
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">No</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Proposed academy transfer
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['target-date-for-transfer']%}
+                                <p class="govuk-body">{{data['target-date-for-transfer']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__value">
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Deficit
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">No</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Date the transfer was first discussed with outgoing trust
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['transfer-first-discussed-date']%}
+                                <p class="govuk-body">{{data['transfer-first-discussed-date']}}</p>
+                            {% else %} 
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__value">
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            School type
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Academy</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Additional information (optional)
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <span class="empty">Empty</span>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden">reason for transfer</span>
+                                </a>
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Dioceses % G or O
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Not applicable</p>
-                        </dd>
-                    </div>
+                    </dl>
+                </div>
+            </section>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Distance to sponsor HQ
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">1.5 miles (9 minutes)</p>
-                        </dd>
-                    </div>
+            <h2 class="govuk-heading-s">
+                General information and academy performance
+            </h2>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            MP (party)
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Jonathan Djanogly (Conservative party)</p>
-                        </dd>
-                    </div>
+            <section class="app-summary-card govuk-!-margin-bottom-7">
+                <header class="app-summary-card__header">
+                    <h2 class="app-summary-card__title">
+                        General information and academy performance details
+                    </h2>
+                </header>
+                <div class="app-summary-card__body">
+                    <dl class="govuk-summary-list">
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Ofsted judgement date
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Good (04-07-13). Short inspection - 13-09-17</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                School phase
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Primary</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Current framework
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">No</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Age range
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">5 to 11 years old</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Achievement of pupil
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Good</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Capacity
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">420</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Quality of teaching
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Good</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Number on roll (percentage the school is full)
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">401 (95.47%)</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Behaviour and safety of pupil
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Outstanding</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Published admissions number (PAN)
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">60</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Leadership and management
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                            <p class="govuk-body">Good</p>
-                        </dd>
-                    </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Private finance initiative (PFI) scheme
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">No</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Viability issue
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">No</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Financial deficit
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">No</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                School type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Academy</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Percentage of good or outstanding academies in the diocesan trust
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Not applicable</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Distance from the academy to the trust headquarters
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">1.5 miles (9 minutes)</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                MP (party)
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Jonathan Djanogly (Conservative party)</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Ofsted judgement date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Good (04-07-13). Short inspection - 13-09-17</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Current framework
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">No</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Additional information (optional)
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <span class="empty">Empty</span>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden">reason for transfer</span>
+                                </a>
+                            </dd>
+                        </div>
 
                     </dl>
                 </div>
@@ -467,7 +612,7 @@
             <section class="app-summary-card govuk-!-margin-bottom-7">
                 <header class="app-summary-card__header">
                     <h2 class="app-summary-card__title">
-                        Pupil numbers
+                        Pupil number details
                     </h2>
                 </header>
                 <div class="app-summary-card__body">
@@ -476,8 +621,10 @@
                             <dt class="govuk-summary-list__key">
                                 Girls on roll
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <dd class="govuk-summary-list__value">
                                 <p class="govuk-body">48.7%</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
                             </dd>
                             <!--Add change link if necessary based on needs-->
                             {# <dd class="govuk-summary-list__actions">
@@ -491,8 +638,10 @@
                             <dt class="govuk-summary-list__key">
                                 Boys on roll
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <dd class="govuk-summary-list__value">
                                 <p class="govuk-body">51.3%</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
                             </dd>
                         </div>
 
@@ -500,8 +649,10 @@
                             <dt class="govuk-summary-list__key">
                                 Pupils with a statement of special educational needs (SEN)
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <dd class="govuk-summary-list__value">
                                 <p class="govuk-body">2.7%</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
                             </dd>
                         </div>
 
@@ -509,8 +660,10 @@
                             <dt class="govuk-summary-list__key">
                                 Pupils whose first language is not English
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <dd class="govuk-summary-list__value">
                                 <p class="govuk-body">2.7%</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
                             </dd>
                         </div>
 
@@ -518,8 +671,24 @@
                             <dt class="govuk-summary-list__key">
                                 Pupils eligible for free school meal during the past 6 years
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <dd class="govuk-summary-list__value">
                                 <p class="govuk-body">16.8%</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Additional information (optional)
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <span class="empty">Empty</span>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden">reason for transfer</span>
+                                </a>
                             </dd>
                         </div>
                     </dl>
@@ -533,7 +702,7 @@
             <section class="app-summary-card govuk-!-margin-bottom-7">
                 <header class="app-summary-card__header">
                     <h2 class="app-summary-card__title">
-                        Latest Ofsted judgement
+                        Latest Ofsted judgement details
                     </h2>
                 </header>
                 <div class="app-summary-card__body">
@@ -542,8 +711,10 @@
                             <dt class="govuk-summary-list__key">
                                 School name
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <dd class="govuk-summary-list__value">
                                 <p class="govuk-body">Godmanchester Community Academy</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
                             </dd>
                             <!--Add change link if necessary based on needs-->
                             {# <dd class="govuk-summary-list__actions">
@@ -557,8 +728,10 @@
                             <dt class="govuk-summary-list__key">
                                 Ofsted Inspection date
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <dd class="govuk-summary-list__value">
                                 <p class="govuk-body">13-09-17</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
                             </dd>
                         </div>
 
@@ -566,53 +739,24 @@
                             <dt class="govuk-summary-list__key">
                                 Overall Effectiveness
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
+                            <dd class="govuk-summary-list__value">
                                 <p class="govuk-body">Good</p>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
                             </dd>
                         </div>
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Achievement of Pupils
+                                Additional information (optional)
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                                <p class="govuk-body">Good</p>
+                            <dd class="govuk-summary-list__value">
+                                <span class="empty">Empty</span>
                             </dd>
-                        </div>
-
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Quality of teaching
-                            </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                                <p class="govuk-body">Good</p>
-                            </dd>
-                        </div>
-
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Behaviour and safety of Pupils
-                            </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                                <p class="govuk-body">Outstanding</p>
-                            </dd>
-                        </div>
-
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Leadership & Management
-                            </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                                <p class="govuk-body">Good</p>
-                            </dd>
-                        </div>
-
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Early years Provision
-                            </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                                <p class="govuk-body">Good</p>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden">reason for transfer</span>
+                                </a>
                             </dd>
                         </div>
                     </dl>
