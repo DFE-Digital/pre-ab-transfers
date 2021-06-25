@@ -79,7 +79,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Published admissions number (PAN)
+                        Published admission number (PAN)
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
                         <p class="govuk-body">60</p>
@@ -97,7 +97,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Viability issue
+                        Viability issues
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
                         <p class="govuk-body">No</p>
@@ -151,7 +151,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Ofsted judgement date
+                        Ofsted inspection date
                     </dt>
                     <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
                         <p class="govuk-body">Good (04-07-13). Short inspection - 13-09-17</p>
@@ -205,9 +205,21 @@
         
             </dl>
 
+            <form action="./st-wilfreds-ps" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Confirm and continue
+                </button>
+            </div>
+
+            </form> 
+
         </div>
 
-        {% if data['submitted-academy-performance'] and data['update-additional-information'] !='yes'  %}
+        {# {% if data['submitted-academy-performance'] and data['update-additional-information'] !='yes'  %}
 
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
             <h2 class="govuk-heading-m">
@@ -271,7 +283,7 @@
                 </button>
             </form>
         </div>
-        {% endif %}
+        {% endif %} #}
         
     </div>
 
