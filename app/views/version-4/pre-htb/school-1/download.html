@@ -5,8 +5,35 @@
 {% set projectData = data['records'][0] %}
 
 {% block beforeContent %}
-  {% include "version-2/includes/phase-banner.html" %}
-  <a class="govuk-back-link" href="./preview-htb-template">Back to preview</a>
+  
+    {% include "version-2/includes/phase-banner.html" %}
+
+    <!--setting for dynamic back link-->
+    {% if not backLink %}
+        {% set backLink = 'javascript:history.back();' %}
+    {% endif %}
+
+    {% if not backText %}
+        {% set backText = 'Back'  %}
+    {% endif %}
+
+    {% if backLink == 'false' %}
+        {% set backLink = false %}
+    {% endif %}
+
+    {% if backText == 'false' %}
+        {% set backText = '' %}
+    {% endif %}
+
+    {% block pageNavigation %}
+    {% if backLink %}
+        {{ govukBackLink({
+        text: backText,
+        href: backLink
+        }) }}
+    {% endif %}
+    {% endblock %}
+
 {% endblock %}
 
 {% block content %}
