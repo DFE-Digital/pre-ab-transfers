@@ -1,10 +1,10 @@
-{% extends "version-2/includes/form-template.html" %}
+{% extends "version-4/includes/form-template.html" %}
 
 {% set projectData = data['records'][0] %}
 
-{% set pageTitle = "Are there any other factors to consider during this transfer? – Transfer an academy – GOV.UK" %}
+{% set pageTitle = "Are there any important risks to consider? – Manage an academy transfer – GOV.UK" %}
 
-{% set relatedNavigation = 'true' %}
+{% set relatedNavigation = 'false' %}
 
 {% block formQuestions %}
   <form action="../benefits-and-other-factors" method="post" novalidate>
@@ -13,10 +13,10 @@
       <span class="govuk-caption-l">
           {{ projectData.name }}
       </span>
-      Are there any other factors to consider during this transfer?
+      Are there any important risks to consider?
     {% endset %}
 
-    {% set highProfileHtml %}
+    {# {% set highProfileHtml %}
     {{ govukInput({
       id: "high-profile",
       name: "high-profile",
@@ -53,11 +53,12 @@
         text: "Specify this concern further"
       }
     }) }}
-    {% endset -%}
+    {% endset -%} #}
 
     {{ govukCheckboxes({
-      idPrefix: "waste",
-      name: "waste",
+      idPrefix: "risks-issues",
+      name: "risks-issues",
+      classes: "govuk-!-margin-bottom-6",
       fieldset: {
         legend: {
           html: pageHeading,
@@ -71,28 +72,32 @@
       items: [
         {
           value: "high-profile-transfer",
-          text: "This is a high profile transfer (ministers and media could be involved)",
-          conditional: {
-            html: highProfileHtml
-          }
+          text: "This is a high profile transfer (ministers and media could be involved)"
         },
 
         {
           value: "complex-issues",
-          text: "There are complex land and building issues",
-          conditional: {
-            html: complexIssuesHtml
-          }
+          text: "There are complex land and building issues"
         },
 
         {
           value: "finance-debt",
-          text: "There are finance and debt concerns",
-          conditional: {
-            html: financeDebtHtml
-          }
+          text: "There are finance and debt concerns"
         }
       ]
+    }) }}
+
+    {{ govukTextarea({
+      name: "specify-concern",
+      id: "specify-concern",
+      rows: "6",
+      label: {
+        text: "Provide more details",
+        classes: "govuk-label--l"
+      },
+      hint: {
+        text: "Use this area to provide more information or list any other risks"
+      }
     }) }}
 
         {{ govukButton({
