@@ -2,7 +2,7 @@
 
 {% set projectData = data['records'][0] %}
 
-{% set pageTitle = "Benefits and other factors for " + projectData.name + " – Transfer an academy – GOV.UK" %}
+{% set pageTitle = "Benefits and other factors for " + projectData.name + " – Manage an academy transfer – GOV.UK" %}
 
 {% block beforeContent %}
   {% include "version-2/includes/phase-banner.html" %}
@@ -16,7 +16,7 @@
                 {{ projectData.reference }}
             </span>
             <h1 class="govuk-heading-l">
-                Benefits and other factors
+                Benefits and risks
             </h1>
             <!--Removing this for mvp as we are not yet sure what will be useful in a given context.
             <h2 class="govuk-heading-m">
@@ -34,7 +34,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        What are the benefits the transfer is intended to bring?
+                        What are the benefits the transfer intended to bring?
                     </dt>
                     <dd class="govuk-summary-list__value">
                     {% if data['benefits-of-transfer']%}
@@ -52,11 +52,12 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Are there any other factors to consider during this transfer?
+                        Are there any important risks to consider?
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['other-factors']%}
-                        <p class="govuk-body">{{data['other-factors']}}</p>
+                    {% if data['risks-issues']%}
+                        <p class="govuk-body">{{data['risks-issues']}}</p>
+                        <p class="govuk-body">{{data['specify-concern']}}</p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
