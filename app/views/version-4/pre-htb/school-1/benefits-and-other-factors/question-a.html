@@ -2,7 +2,7 @@
 
 {% set projectData = data['records'][0] %}
 
-{% set pageTitle = "What are the benefits the transfer intended to bring? – Manage an academy transfer – GOV.UK" %}
+{% set pageTitle = "What are the intended benefits of the transfer? – Manage an academy transfer – GOV.UK" %}
 
 {% set relatedNavigation = 'true' %}
 
@@ -14,7 +14,7 @@
       <span class="govuk-caption-l">
           {{ projectData.name }}
       </span>
-      What are the benefits the transfer intended to bring?
+      What are the intended benefits of the transfer?
     {% endset %}
 
     {% set otherBenefitHtml %}
@@ -45,6 +45,10 @@
       },
       items: [
         {
+          value: "leadership",
+          text: "Stronger leadership"
+        },
+        {
           value: "governance",
           text: "Strengthening governance"
         },
@@ -53,20 +57,20 @@
           text: "Improving safeguarding"
         },
         {
-          value: "leadership",
-          text: "Stronger leadership"
-        },
-        {
           value: "finance",
-          text: "Securing financial recovery"
-        },
-        {
-          value: "ofsted",
-          text: "Improving Ofsted rating"
+          text: "Secure financial position"
         },
         {
           value: "finance-and-support",
           text: "A central financial team and central support"
+        },
+        {
+          value: "pupil-performance",
+          text: "Improved pupil performance"
+        },
+        {
+          value: "stability",
+          text: "Long term stability"
         },
         {
           value: "other-benefit",
