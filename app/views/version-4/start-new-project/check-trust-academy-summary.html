@@ -11,24 +11,26 @@
 
 {% set outgoingTrust = data['trusts'] | getTrustById(data['outgoing-trust-id']) %}
 
-{% set outgoingAcademy = data['trusts'] | getTrustById(data['outgoing-trust-id']) | getAcademiesByIds(data['outgoing-academies']) | first %}
+{# {% set outgoingAcademy = data['trusts'] | getTrustById(data['outgoing-trust-id']) | getAcademiesByIds(data['outgoing-academies']) | first %} #}
+{% set outgoingAcademies = data['trusts'] | getTrustById(data['outgoing-trust-id']) | getAcademiesByIds(data['outgoing-academies']) %}
 
 {% set incomingTrust = data['trusts'] | getTrustById(data['incoming-trust-id']) %}
 
 {% block content %}
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-three-quarters">
+        <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-xl">
                 Check trust and academy details
             </h1>
         </div>
-    </div>
 
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
+        <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-m">
                 Outgoing trust
             </h2>
+        </div>
+
+        <div class="govuk-grid-column-full">
 
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -57,10 +59,16 @@
                 </div>
         
             </dl>
+        </div>
 
+        {% for academy in outgoingAcademies %}
+        <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-m">
-                Academy details
+                {{ academy.academy_name }}
             </h2>
+        </div>
+
+        <div class="govuk-grid-column-full">
 
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -69,7 +77,7 @@
                         Name
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        {{ outgoingAcademy.academy_name }}
+                        {{ academy.academy_name }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="./add-outgoing-trust-name">
@@ -83,7 +91,7 @@
                         URN
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        {{ outgoingAcademy.urn }}
+                        {{ academy.urn }}
                     </dd>
                     <dd class="govuk-summary-list__value"></dd>
                 </div>
@@ -93,8 +101,9 @@
                         Local authority
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        {{ outgoingAcademy.local_authority_name }}
+                        {{ academy.local_authority_name }}
                     </dd>
+                    <dd class="govuk-summary-list__value"></dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
@@ -102,8 +111,9 @@
                         School type
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        {{ outgoingAcademy.establishment_type }}
+                        {{ academy.establishment_type }}
                     </dd>
+                    <dd class="govuk-summary-list__value"></dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
@@ -111,8 +121,9 @@
                         Faith school
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        {{ outgoingAcademy.religious_character }}
+                        {{ academy.religious_character }}
                     </dd>
+                    <dd class="govuk-summary-list__value"></dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
@@ -120,8 +131,9 @@
                         Ofsted rating
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        {{ outgoingAcademy.ofsted_rating }}
+                        {{ academy.ofsted_rating }}
                     </dd>
+                    <dd class="govuk-summary-list__value"></dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
@@ -129,8 +141,9 @@
                         Last inspection
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        {{ outgoingAcademy.ofsted_inspection_date | dateToGovukDate }}
+                        {{ academy.ofsted_inspection_date | dateToGovukDate }}
                     </dd>
+                    <dd class="govuk-summary-list__value"></dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
@@ -142,13 +155,21 @@
                     {% else %}
                         <dd class="govuk-summary-list__value">Does not apply</dd>
                     {% endif %}
+                        <dd class="govuk-summary-list__value"></dd>
                 </div>
         
             </dl>
+        </div>
+        {% endfor %}
+
+        <div class="govuk-grid-column-two-thirds">
 
             <h2 class="govuk-heading-m">
                 Incoming trust
             </h2>
+        </div>
+
+        <div class="govuk-grid-column-full">
 
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
@@ -164,6 +185,16 @@
                             Change<span class="govuk-visually-hidden">Incoming trust name</span>
                         </a>
                     </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Trust reference number
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ incomingTrust.trust_reference_number }}
+                    </dd>
+                    <dd class="govuk-summary-list__value"></dd>
                 </div>
         
             </dl>
