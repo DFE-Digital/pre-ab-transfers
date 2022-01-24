@@ -6,7 +6,7 @@
 {% block formQuestions %}
     <form action="./add-incoming-trust-name" method="post" novalidate>
         {% set trust = data['trusts'] | getTrustById(data['outgoing-trust-id']) %}
-        {{ govukRadios({
+        {{ govukCheckboxes({
             idPrefix: "academies",
             name: "outgoing-academies",
             fieldset: {
