@@ -1,19 +1,14 @@
-{% extends "version-4/layout.html" %}
+{% extends "version-4/includes/form-template.html" %}
 
 {% set pageTitle = "General information and academy performance (reference) – Transfer an academy – GOV.UK" %}
 
 {% set projectData = data['records'][0] %}
 
-{% block beforeContent %}
-  {% include "version-2/includes/phase-banner.html" %}
-  <a class="govuk-back-link" href="../school-1/st-wilfreds-ps">Back to task list</a>
-{% endblock %}
-
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
             <span class="govuk-caption-l">
-                {{ projectData.reference }}
+                Academy: The Richard Crosse Cofe Primary School
             </span>
             <h1 class="govuk-heading-l">
                 General information
@@ -24,7 +19,7 @@
             </h2>
             <-->
             <p class="govuk-body">
-                This information is pre-populated from TRAMS and the school's application form.
+                This information comes from TRAMS and the data in this page will go into your project template.
             </p>
         <hr class="govuk-section-break govuk-section-break--l">
         </div>

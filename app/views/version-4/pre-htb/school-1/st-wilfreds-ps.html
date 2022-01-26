@@ -1,6 +1,8 @@
 {% extends "version-4/layout.html" %}
 
-{% set pageTitle = "St.Wilfred's primary school – Transfer an academy – GOV.UK" %}
+{% set pageTitle = "Excell3 Independent Schools Ltd – Manage an academy transfer" %}
+
+{% set projectData = data['records'][0] %}
 
 {% block beforeContent %}
   {% include "version-2/includes/phase-banner.html" %}
@@ -9,31 +11,36 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-
     <div class="govuk-grid-column-three-quarters">
-      <span class="govuk-caption-l">URN 6759840</span>
+      <span class="govuk-caption-l">{{ projectData.project_reference }}</span>
       <h1 class="govuk-heading-xl">
-        St Wilfred's Primary School
+        {{ projectData.name }}
       </h1>
     </div>
 
     <div class="govuk-grid-column-three-quarters">
-      <h2 class="govuk-heading-l">
-        Task list
-      </h2>
-      <p class="govuk-body">
-        The task list will help you prepare for the headteacher board (HTB) meeting. You can complete the tasks in any order.
-      </p>
-      <hr class="govuk-section-break govuk-section-break--m">
-    </div>
 
-    <div class="govuk-grid-column-three-quarters">
-      <ol class="app-task-list">
-        <li>
+      <h2 class="govuk-heading-l">
+        Create a project template
+      </h2>
+
+      <p class="govuk-body">
+        By completing the following sections, you can create a project template that will help you prepare for an advisory board meeting.
+      </p>
+
+      <p class="govuk-body">
+        You can complete them in any order.
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--l">
+
+      <ol class="app-task-list govuk-!-margin-bottom-4">
+
           <h3 class="app-task-list__section">
-            Create headteacher board (HTB) template
+            Transfer details
           </h3>
-          <ul class="app-task-list__items govuk-!-padding-left-0">
+
+          <ul class="app-task-list__items govuk-!-margin-bottom-0 govuk-!-padding-left-0">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="./features-of-a-transfer.html" aria-describedby="features-of-a-transfer">
@@ -42,6 +49,7 @@
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="features-of-a-transfer">Not for mvp</strong>
             </li>
+
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="./set-transfer-dates.html" aria-describedby="set-transfer-dates">
@@ -59,6 +67,7 @@
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="benefits-and-other-factors">Not started</strong>
             </li>
+
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="./rationale" aria-describedby="rationale">
@@ -76,92 +85,36 @@
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="general-information">Not started</strong>
             </li>
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="./general-information" aria-describedby="Academy performance">
-                  General information
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="academy-performance">Reference only</strong>
-            </li>
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="./pupil-number" aria-describedby="Pupil number">
-                  Pupil numbers
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="pupil-number">Reference only</strong>
-            </li>
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="./latest-ofsted-judgement" aria-describedby="Latest Ofsted judgement">
-                  Latest Ofsted judgement
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="latest-ofsted-judgement">Reference only</strong>
-            </li>
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="./key-stage-2-performance-tables" aria-describedby="Key stage performance tables">
-                  Key stage 2 performance tables
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Reference only</strong>
-            </li>
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="./key-stage-4-performance-tables" aria-describedby="Key stage performance tables">
-                  Key stage 4 performance tables
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Reference only</strong>
-            </li>
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="./key-stage-5-performance-tables" aria-describedby="Key stage performance tables">
-                  Key stage 5 performance tables
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Reference only</strong>
-            </li>
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="" aria-describedby="Key stage performance tables">
-                  Financial assessment
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Reference only</strong>
-            </li>
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="" aria-describedby="Key stage performance tables">
-                  RAT report
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Reference only</strong>
-            </li>
-
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="" aria-describedby="Key stage performance tables">
-                  Maps
-                </a>
-              </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Reference only</strong>
-            </li>
-
           </ul>
-        </li>
+
       </ol>
-    <hr class="govuk-section-break govuk-section-break--m">
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h3 class="app-task-list__section">
+        School data
+      </h3>
+      <ul class="govuk-list govuk-list--spaced">
+        <li>
+          <a href="./school-data">
+            The Richard Crosse Cofe Primary School
+          </a>
+        </li>
+        <li>
+          <a href="./school-data">
+            The Howard Primary School
+          </a>
+        </li>
+        <li>
+          <a href="./school-data">
+            Rosehill Methodist Primary Academy
+          </a>
+        </li>
+      </ul>
+    
+    <hr class="govuk-section-break govuk-section-break--l">
+
     </div>
 
     <div class="govuk-grid-column-two-thirds">
@@ -171,7 +124,7 @@
       </h2>
 
       <p class="govuk-body govuk-!-margin-bottom-6">
-        Preview your HTB template before you generate it into a Word document, or you can generate the document without previewing it.
+        Download the template as a Word document or preview its contents.
       </p>
 
       <div class="govuk-button-group">
@@ -183,9 +136,9 @@
           Generate HTB document
         </a>
       </div>
-      </form>
 
     </div>
+    
   </div>
 
 {% endblock %}
