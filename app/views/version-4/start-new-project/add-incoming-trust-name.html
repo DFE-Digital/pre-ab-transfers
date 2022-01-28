@@ -8,7 +8,7 @@
         {% set outgoingTrust = data['trusts'] | getTrustById(data['outgoing-trust-id']) %}
 
         {% set pageHeading %}
-            Add the incoming trust name for {{ outgoingTrust.trust_name }}
+            What is the incoming trust name?
         {% endset %}
 
         {{ govukInput({
