@@ -2,11 +2,13 @@
 
 {% set pageTitle = "Has this transfer started because RDD or ESFA have intervened with the academy or trust? – Transfer an academy – GOV.UK" %}
 
-{% set relatedNavigation = 'true' %}
+{% set projectData = data['records'][0] %}
+
+{# {% set relatedNavigation = 'true' %} #}
 
 {% block formQuestions %}
   <span class="govuk-caption-l">
-    St Wilfred's primary school
+    {{ projectData.name }}
   </span>
   <h1 class="govuk-heading-l">
     Reason for transfer
