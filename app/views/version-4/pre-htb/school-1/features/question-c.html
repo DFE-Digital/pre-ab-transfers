@@ -2,14 +2,16 @@
 
 {% set pageTitle = "What type of transfer is it? – Transfer an academy – GOV.UK" %}
 
-{% set relatedNavigation = 'true' %}
+{% set projectData = data['records'][0] %}
+
+{# {% set relatedNavigation = 'true' %} #}
 
 {% block formQuestions %}
   <form action="../features-of-a-transfer" method="post" novalidate>
     <!--page heading with caption include-->
     {% set pageHeading %}
       <span class="govuk-caption-l">
-          St Wilfred's primary school
+          {{ projectData.name }}
       </span>
       What type of transfer is it?
     {% endset %}
