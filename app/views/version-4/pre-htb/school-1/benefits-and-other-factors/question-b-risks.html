@@ -4,7 +4,7 @@
 
 {% set pageTitle = "Are there any risks to consider? – Manage an academy transfer – GOV.UK" %}
 
-{% set relatedNavigation = 'false' %}
+{% set relatedNavigation = 'true' %}
 
 {% block formQuestions %}
   <form action="../benefits-and-other-factors" method="post" novalidate>
@@ -13,7 +13,7 @@
       <span class="govuk-caption-l">
           {{ projectData.name }}
       </span>
-      Are there any risks to consider?
+      What are the risks associated with this transfer?
     {% endset %}
 
     {# {% set highProfileHtml %}
@@ -71,38 +71,30 @@
       },
       items: [
         {
-          value: "high-profile-transfer",
+          value: "This is a high profile transfer (ministers and media could be involved)",
           text: "This is a high profile transfer (ministers and media could be involved)"
         },
 
         {
-          value: "complex-issues",
+          value: "There are complex land and building issues",
           text: "There are complex land and building issues"
         },
 
         {
-          value: "finance-debt",
+          value: "There are finance and debt concerns",
           text: "There are finance and debt concerns"
+        },
+
+        {
+          value: "Other risks",
+          text: "Other risks"
         }
       ]
     }) }}
 
-    {{ govukTextarea({
-      name: "specify-concern",
-      id: "specify-concern",
-      rows: "6",
-      label: {
-        text: "Provide more details",
-        classes: "govuk-label--l"
-      },
-      hint: {
-        text: "Use this area to provide more information or list any other risks"
-      }
+    {{ govukButton({
+      text: "Save and continue"
     }) }}
-
-        {{ govukButton({
-          text: "Save and continue"
-        }) }}
   </form>
 
 {% endblock %}

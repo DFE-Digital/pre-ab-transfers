@@ -52,10 +52,11 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Are there any risks to consider?
+                        Are there any risks to consider for this transfer?
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['risks-issues']%}
+                    {% if data['risks-branching'] and data['risks-issues'] %}
+                        <p class="govuk-body">{{data['risks-branching']}}</p>
                         <p class="govuk-body">{{data['risks-issues']}}</p>
                         <p class="govuk-body">{{data['specify-concern']}}</p>
                     {% else %} 
@@ -63,7 +64,7 @@
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./benefits-and-other-factors/question-b">
+                    <a class="govuk-link" href="./benefits-and-other-factors/question-b-branch">
                         Change<span class="govuk-visually-hidden">reason for transfer</span>
                     </a>
                     </dd>

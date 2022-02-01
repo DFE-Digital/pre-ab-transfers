@@ -1,0 +1,63 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set projectData = data['records'][0] %}
+
+{% set pageTitle = "Are there any risks to consider? – Manage an academy transfer – GOV.UK" %}
+
+{% set relatedNavigation = 'true' %}
+
+{% block formQuestions %}
+  <!--page heading with caption include-->
+    <span class="govuk-caption-l">
+        {{ projectData.name }}
+    </span>
+    <h1 class="govuk-heading-l">Add more details associated with this transfer</h1>
+
+    <form action="../benefits-and-other-factors" method="post" novalidate>
+
+    {{ govukTextarea({
+      name: "high-profile-detail",
+      id: "high-profile-detail",
+      classes: "govuk-!-margin-bottom-8",
+      label: {
+        text: "Can you provide more detail on why this is a high profile transfer",
+        classes: "govuk-label--m"
+      }
+    }) }}
+
+    {{ govukTextarea({
+      name: "complex-land-and-building-detail",
+      id: "complex-land-and-building-detail",
+      classes: "govuk-!-margin-bottom-8",
+      label: {
+        text: "Can you provide more detail on complex land and building issues",
+        classes: "govuk-label--m"
+      }
+    }) }}
+
+    {{ govukTextarea({
+      name: "finance-and-debt-concerns-detail",
+      id: "finance-and-debt-concerns-detail",
+      classes: "govuk-!-margin-bottom-8",
+      label: {
+        text: "Can you provide more detail on finance and debt concerns",
+        classes: "govuk-label--m"
+      }
+    }) }}
+
+    {{ govukTextarea({
+      name: "other-risks-detail",
+      id: "other-risks-detail",
+      label: {
+        text: "Can you provide more detail on other risks associated with this transfer",
+        classes: "govuk-label--m"
+      }
+    }) }}
+    
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}
