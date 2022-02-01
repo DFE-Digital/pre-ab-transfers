@@ -24,3 +24,18 @@ router.get('/transfers/incoming-trust-search', (req, res) => {
 })
 
 module.exports = router
+
+// Run this code when a form is submitted to 'risks-branching'
+router.post('/decide-risks-branch', function (req, res) {
+
+  var howManyBalls = req.session.data['risks-branching']
+  
+  if (howManyBalls == "Yes"){
+    // Send user to risks page
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-risks')
+  } else {
+    // Send user to benefits and risks summary page
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
+  }
+
+})
