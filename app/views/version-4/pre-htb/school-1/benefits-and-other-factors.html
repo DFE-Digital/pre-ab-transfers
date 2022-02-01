@@ -69,6 +69,24 @@
                     </a>
                     </dd>
                 </div>
+
+                {% if data['high-profile-data'] or data['complex-land-and-building-detail'] or data['finance-and-debt-concerns-detail']  %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        More details associated with this transfer
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <p class="govuk-body">{{data['high-profile-data']}}</p>
+                        <p class="govuk-body">{{data['complex-land-and-building-detail']}}</p>
+                        <p class="govuk-body">{{data['finance-and-debt-concerns-detail']}}</p>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./benefits-and-other-factors/question-b-branch">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
+                    </a>
+                    </dd>
+                </div>
+                {% endif %}
         
             </dl>
 
