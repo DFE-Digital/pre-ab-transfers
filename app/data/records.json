@@ -4,7 +4,7 @@
     "joining": "Dynamics academy",
     "la": "Warrington LA",
     "status": "newly_assigned",
-    "reference": "URN 6759840",
+    "reference": "UKPRN 6759840",
     "project_reference": "SW-MAT-10000001",
     "daysUntilHTB": 2,
     "date": "12 January 2021"
@@ -14,7 +14,7 @@
     "joining": "Focus academy",
     "la": "Cheshire LA",
     "status": "newly_assigned",
-    "reference": "URN 1234567",
+    "reference": "UKPRN 1234567",
     "project_reference": "N-MAT-10000002",
     "daysUntilHTB": 3,
     "date": "2 March 2021"
@@ -24,7 +24,7 @@
     "joining": "The Ascent Academies' Trust",
     "la": "Portland LA",
     "status": "pre_htb",
-    "reference": "URN 2345678",
+    "reference": "UKPRN 2345678",
     "project_reference": "NWLSC-SAT-10000003",
     "daysUntilHTB": 13,
     "date": "21 April 2021"
