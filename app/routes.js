@@ -96,3 +96,15 @@ router.post('/submit-land-and-building-issues', function (req, res) {
       }
     }
 })
+
+router.post('/submit-finance-debt-concern', function (req, res) {
+
+  var associatedRisksForTransfer = req.session.data['risks-issues']
+    if (associatedRisksForTransfer.includes("Other risks")) {
+      res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
+    }
+    else {
+      // Send user to benefits and risks summary page
+      res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
+    }
+})
