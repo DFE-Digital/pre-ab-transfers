@@ -18,11 +18,6 @@
             <h1 class="govuk-heading-l">
                 Provide the rational for the transfer
             </h1>
-            <!--Removing this for mvp as we are not yet sure what will be useful in a given context.
-            <h2 class="govuk-heading-m">
-                Outgoing trust: <span class="govuk-!-font-weight-regular govuk-!-font-size-24">{{ projectData.name }}</span>
-            </h2>
-            <-->
         <hr class="govuk-section-break govuk-section-break--l">
         </div>
     </div>
@@ -74,11 +69,33 @@
 
             <input type="hidden" name="answers-checked" value="true">
 
-            <div class="govuk-button-group">
-                <button class="govuk-button" data-module="govuk-button">
-                    Confirm and continue
-                </button>
-            </div>
+            {% if data['project-rationale'] or data['trust-rationale']%}
+            {{ govukRadios({
+                idPrefix: "have-you-completed-this-section",
+                name: "have-you-completed-this-section",
+                fieldset: {
+                legend: {
+                    text: "Have you completed this section?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                }
+                },
+                items: [
+                {
+                    value: "yes",
+                    text: "Yes, I’ve completed this section"
+                },
+                {
+                    value: "no",
+                    text: "No, I’ll come back to it later"
+                }
+                ]
+            }) }}
+            {% endif %}
+
+            <button class="govuk-button" data-module="govuk-button">
+                Confirm and continue
+            </button>
 
             </form>           
         </div>
