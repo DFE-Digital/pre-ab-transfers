@@ -1,0 +1,36 @@
+{% extends "version-4/includes/form-template.html" %}
+
+{% set projectData = data['records'][0] %}
+
+{% set pageTitle = "Can you provide more detail on other risks associated with this transfer? – Manage an academy transfer – GOV.UK" %}
+
+{% set relatedNavigation = 'false' %}
+
+{% block formQuestions %}
+  <form action="../benefits-and-other-factors" method="post" novalidate>
+    <!--page heading with caption include-->
+    {% set pageHeading %}
+      <span class="govuk-caption-l">
+          {{ projectData.name }}
+      </span>
+      Can you provide more detail on other risks associated with this transfer?
+    {% endset %}
+    
+
+    {{ govukTextarea({
+      name: "other-risks-detail",
+      id: "other-risks-detail",
+      classes: "govuk-!-margin-bottom-8",
+      label: {
+        html: pageHeading,
+        isPageHeading: true,
+        classes: "govuk-label--l"
+      }
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+  </form>
+
+{% endblock %}
