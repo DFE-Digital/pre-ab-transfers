@@ -188,21 +188,132 @@
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Are there any risks to consider?
+                                Are there any risks to consider for this transfer?
                             </dt>
                             <dd class="govuk-summary-list__value">
-                            {% if data['other-factors']%}
-                                <p class="govuk-body">{{data['other-factors']}}</p>
+                            {% if data['risks-branching'] %}
+                                <p class="govuk-body">{{data['risks-branching']}}</p>
                             {% else %} 
                                 <span class="empty">Empty</span>
                             {% endif %}
                             </dd>
                             <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="./benefits-and-other-factors/question-b">
+                            <a class="govuk-link" href="./benefits-and-other-factors/question-b-branch">
                                 Change<span class="govuk-visually-hidden">reason for transfer</span>
                             </a>
                             </dd>
                         </div>
+
+                        {% if checked("['risks-issues']", "This is a high profile transfer (ministers and media could be involved)") %}
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                More details on why this is a high profile transfer
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['high-profile-detail'] %}
+                                <p class="govuk-body">{{data['high-profile-detail']}}</p>
+                            {% else %}
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./benefits-and-other-factors/question-b-details-high-profile-transfer">
+                                Change<span class="govuk-visually-hidden">reason for transfer</span>
+                            </a>
+                            </dd>
+                        </div>
+                        {% endif %}
+
+                        {% if checked("['risks-issues']", "There are complex land and building issues") %}
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                More details on complex land and building issues
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['complex-land-and-building-detail'] %}
+                                <p class="govuk-body">{{data['complex-land-and-building-detail']}}</p>
+                            {% else %}
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./benefits-and-other-factors/question-b-details-complex-land-and-building-detail">
+                                Change<span class="govuk-visually-hidden">reason for transfer</span>
+                            </a>
+                            </dd>
+                        </div>
+                        {% endif %}
+
+                        {% if checked("['risks-issues']", "There are finance and debt concerns") %}
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                More details on finance and debt concerns
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['finance-and-debt-concerns-detail'] %}
+                                <p class="govuk-body">{{data['finance-and-debt-concerns-detail']}}</p>
+                            {% else %}
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./benefits-and-other-factors/question-b-details-finance-and-debt-concerns-detail">
+                                Change<span class="govuk-visually-hidden">reason for transfer</span>
+                            </a>
+                            </dd>
+                        </div>
+                        {% endif %}
+
+                        {% if checked("['risks-issues']", "Other risks") %}
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                More details on other risks associated with the transfer
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {% if data['other-risks-detail'] %}
+                                <p class="govuk-body">{{data['other-risks-detail']}}</p>
+                            {% else %}
+                                <span class="empty">Empty</span>
+                            {% endif %}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="./benefits-and-other-factors/question-b-details-other-risks">
+                                Change<span class="govuk-visually-hidden">reason for transfer</span>
+                            </a>
+                            </dd>
+                        </div>
+                        {% endif %}
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     </dl>
                 </div>
