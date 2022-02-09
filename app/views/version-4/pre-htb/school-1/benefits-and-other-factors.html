@@ -149,7 +149,7 @@
 
             <input type="hidden" name="answers-checked" value="true">
 
-            {# {% if data['risks-branching']%}
+            {% if checked("['risks-branching']", "Yes") %}
             {{ govukRadios({
                 idPrefix: "have-you-completed-this-section",
                 name: "have-you-completed-this-section",
@@ -171,7 +171,7 @@
                 }
                 ]
             }) }}
-            {% endif %} #}
+            {% endif %}
 
             <button class="govuk-button" data-module="govuk-button">
                 Confirm and continue
