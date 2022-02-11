@@ -65,7 +65,13 @@
                   Benefits and risks
                 </a>
               </span>
+              {% if checked("['have-you-completed-this-section']", "yes") %}
+                <strong class="govuk-tag app-task-list__tag" id="benefits-and-other-factors">Completed</strong>
+              {% elif data['benefits-of-transfer'] or data['risks-branching'] %}
+                <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="benefits-and-other-factors">In progress</strong>
+              {% else %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="benefits-and-other-factors">Not started</strong>
+              {% endif %}
             </li>
 
             <li class="app-task-list__item">
