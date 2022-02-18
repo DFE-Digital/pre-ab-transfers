@@ -25,7 +25,7 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
 
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <dl class="govuk-summary-list govuk-!-margin-bottom-7">
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
@@ -89,27 +89,18 @@
 
             <input type="hidden" name="answers-checked" value="true">
             
-            {% if data['more-detail']%}
-            {{ govukRadios({
-                idPrefix: "have-you-completed-this-section",
-                name: "have-you-completed-this-section",
-                fieldset: {
-                legend: {
-                    text: "Have you completed this section?",
-                    isPageHeading: false,
-                    classes: "govuk-fieldset__legend--m"
-                }
-                },
-                items: [
+            {% if data['Who initiated the academy transfer'] and data['rdd or esfa intervention'] and data['type-of-transfer'] %}
+            {{ govukCheckboxes({
+            idPrefix: "features-section-complete",
+            name: "features-section-complete",
+            items: [
                 {
-                    value: "yes",
-                    text: "Yes, I’ve completed this section"
-                },
-                {
-                    value: "no",
-                    text: "No, I’ll come back to it later"
+                value: "Mark this section as complete, you can still make changes later",
+                checked: checked("['features-section-complete']", "Mark this section as complete, you can still make changes later"),
+                id: "features-completed",
+                text: "Mark this section as complete, you can still make changes later"
                 }
-                ]
+            ]
             }) }}
             {% endif %}
 
