@@ -80,6 +80,10 @@ router.post('/submit-high-profile', function (req, res) {
         if (associatedRisksForTransfer.includes("Other risks")) {
           res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
         }
+        else {
+          // Send user to benefits and risks summary page
+          res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
+        }
       }
     }
 })
@@ -93,6 +97,10 @@ router.post('/submit-land-and-building-issues', function (req, res) {
     else {
       if (associatedRisksForTransfer.includes("Other risks")) {
         res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
+      }
+      else {
+        // Send user to benefits and risks summary page
+        res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
       }
     }
 })
