@@ -26,7 +26,8 @@
       classes: "govuk-!-width-two-thirds",
       label: {
         text: "Enter the benefit"
-      }
+      },
+      value: data["add-benefit"]
     }) }}
     {% endset -%}
 
@@ -45,39 +46,48 @@
       },
       items: [
         {
-          value: "leadership",
-          text: "Stronger leadership"
+          value: "Stronger leadership",
+          text: "Stronger leadership",
+          id: "benefits-leadership",
+          checked: checked("['benefits-of-transfer']", "Stronger leadership")
         },
         {
-          value: "governance",
-          text: "Strengthening governance"
+          value: "Strengthening governance",
+          text: "Strengthening governance",
+          checked: checked("['benefits-of-transfer']", "Strengthening governance")
         },
         {
-          value: "safeguarding",
-          text: "Improving safeguarding"
+          value: "Improving safeguarding",
+          text: "Improving safeguarding",
+          checked: checked("['benefits-of-transfer']", "Improving safeguarding")
         },
         {
-          value: "finance",
-          text: "Secure financial position"
+          value: "Secure financial position",
+          text: "Secure financial position",
+          checked: checked("['benefits-of-transfer']", "Secure financial position")
         },
         {
-          value: "finance-and-support",
-          text: "A central financial team and central support"
+          value: "A central financial team and central support",
+          text: "A central financial team and central support",
+          checked: checked("['benefits-of-transfer']", "A central financial team and central support")
         },
         {
-          value: "pupil-performance",
-          text: "Improved pupil performance"
+          value: "Improved pupil performance",
+          text: "Improved pupil performance",
+          checked: checked("['benefits-of-transfer']", "Improved pupil performance")
         },
         {
-          value: "stability",
-          text: "Long term stability"
+          value: "Long term stability",
+          text: "Long term stability",
+          checked: checked("['benefits-of-transfer']", "Long term stability")
         },
         {
           value: "other-benefit",
           text: "Add another benefit",
           conditional: {
             html: otherBenefitHtml
-          }
+          },
+          checked: checked("['benefits-of-transfer']", "other-benefit")
         }
       ]
     }) }}
