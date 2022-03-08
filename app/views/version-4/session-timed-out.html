@@ -1,0 +1,29 @@
+{% extends "version-4/layout.html" %}
+
+{% set pageTitle = "For your security, we signed you out – Manage an academy tranfer" %}
+
+{% block beforeContent %}
+  {% include "version-4/includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        For your security, we signed you out
+      </h1>
+
+      <p class="govuk-body">
+        This is because you have not saved your answers in 30 minutes.
+      </p>
+
+      {{ govukButton({
+        text: "Sign in",
+        href: "#",
+        isStartButton: false
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
