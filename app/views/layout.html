@@ -30,8 +30,7 @@
 {% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
 
-{# custom components #}
-{# Most of these copied from the Apply for teacher training prototype #}
+<!--custom components-->
 {% from "_components/autocomplete/macro.njk"   import appAutocomplete %}
 {% from "_components/banner/macro.njk"         import appBanner %}
 {% from "_components/summary-card/macro.njk"   import appSummaryCard %}
@@ -41,7 +40,7 @@
 {% from "_components/primary-navigation-dark/macro.njk"   import appPrimaryNavigationDark %}
 {% from "_components/timeline/macro.njk"   import appTimeline %}
 
-{# moj components #}
+<!--moj components-->
 {%- from "moj/components/filter/macro.njk" import mojFilter -%}
 {%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
 {%- from "moj/components/pagination/macro.njk" import mojPagination -%}
@@ -58,102 +57,49 @@
 {% block header %}
   {% include "_includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
-  {% set headerClass = 'app-dark-header' if data.settings.useDarkHeader else 'app-light-header' %}
-  {{ govukHeader({
-    homepageUrl: "/",
-    productName: serviceName,
-    serviceUrl: "/",
-    classes: headerClass,
-    containerClasses: "govuk-width-container",
-    navigation: [
-      {
-        href: "#1",
-        text: "Your account"
-      } if false,
-      {
-        href: "/transfers/sign-in-1",
-        text: "Sign out"
-      }
-    ] if not hideNav
-  }) }}
-
-  {% set rightHandSideNavHtml %}
-    {% if data.isHatModel %}
-      <nav class="moj-primary-navigation">
-        <ul class="moj-primary-navigation__list">
-          
-            <li class="moj-primary-navigation__item">
-              <a class="moj-primary-navigation__link" {{ 'aria-current="page"' | safe if navActive == 'provider' }} href="/select-provider">
-                {{ data.settings.userActiveProvider }}
-              </a>
-            </li>
-          
+  <header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo govuk-!-width-two-thirds">
+      <a href="/version-4/dashboard-home" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype-text">
+          Manage an academy transfer
+          <!--Transfer an academy-->
+        </span>
+      </a>
+    </div>
+    <div class="govuk-header__content govuk-!-width-one-quarter">
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation " aria-label="Navigation menu">
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="#4">
+              Signout
+            </a>
+          </li>
         </ul>
-
       </nav>
-    {% endif %}
-  {% endset %}
-
-  {% set navItems = [{
-      text: 'Academy transfers (10)',
-      href: '/transfers/dashboard/1',
-      active: true if navActive == 'home'
-    },
-    {
-      text: 'Conversions (0)',
-      href: '/404',
-      active: true if navActive == 'convert'
-    },
-    {
-      text: 'Significant change (0)',
-      href: '/404',
-      active: true if navActive == 'change'
-    }
-    ] %}
-
-  {% if not hidePrimaryNav %}
-
-    {% if data.settings.useDarkHeader %}
-      {{ appPrimaryNavigationDark({
-        label: 'Primary navigation',
-        items: navItems,
-        searchHtml: rightHandSideNavHtml
-      }) }}
-    {% else %}
-      {{ mojPrimaryNavigation({
-      label: 'Primary navigation',
-      items: navItems,
-      searchHtml: rightHandSideNavHtml
-      }) }}
-    {% endif %}
-
-  {% endif %}
+    </div>
+  </div>
+</header>
 
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "prototype"
-  },
-  classes: 'govuk-!-margin-top-1',
-  html: 'This is a prototype of a new service. <a href="#" class="govuk-link">Give feedback to help us improve this service</a>.'
-}) }}
-{% block pageNavigation %}
-{% endblock %}
-{% block pageBanner %}
-{% endblock %}
+
 {% endblock %}
 
-{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+{% block content %}
+
+  {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% endblock %}
+
 
 {% set metaHtml %}
   <ul class="govuk-footer__meta-custom govuk-list govuk-!-font-size-16">
     <li>Email: <a class="govuk-link govuk-footer__link" href="mailto:sddservicessupport@education.gov.uk">sddservicessupport<wbr>@education.gov.uk</a></li>
     <li>We aim to respond within 5 working days, or one working day for more urgent&nbsp;queries</li>
   </ul>
-  {% set guidanceLink = '/guidance' if data.settings.includeGuidance else '#' %}
-  <p class="govuk-body govuk-!-font-size-16"><a href="{{guidanceLink}}" class="govuk-link govuk-footer__link">Guidance</a></p>
 {% endset %}
 
 {% if useAutoStoreData %}
@@ -174,11 +120,11 @@
           href: "/privacy-policy",
           text: "Privacy policy"
         },{
-          href: "/admin/clear-data",
+          href: "/prototype-admin/clear-data",
           text: "Clear data"
         }, {
-          href: "/admin",
-          text: "Admin"
+          href: "/prototype-admin",
+          text: "Prototype admin"
         }, {
           href: "/apply/" + providerCode + "/" + courseCode + "?dualrunning=true&variant=1",
           text: "v1"
