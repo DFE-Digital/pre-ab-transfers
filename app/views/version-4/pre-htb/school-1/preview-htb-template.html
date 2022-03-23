@@ -735,45 +735,75 @@
                     </h2>
                 </header>
                 <div class="app-summary-card__body">
-                    <dl class="govuk-summary-list">
-                        <div class="govuk-summary-list__row">
+                    <!--Short inspection Ofsted report section-->
+                    <h2 class="govuk-heading-m">Short inspection</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+                        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
                             <dt class="govuk-summary-list__key">
-                                School name
+                                Ofsted inspection date
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                <p class="govuk-body">The Richard Crosse Cofe Primary School</p>
+                                {{ "" | todayGovuk }}
                             </dd>
-                            <dd class="govuk-summary-list__actions">
-                            </dd>
-                            <!--Add change link if necessary based on needs-->
-                            {# <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="./set-dates/question-a">
-                                Change<span class="govuk-visually-hidden">outgoing trust</span>
-                            </a>
-                            </dd> #}
                         </div>
+                        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        </div>
+                    </dl>
 
+                    <!--Last full inspection Ofsted report section-->
+                    <h2 class="govuk-heading-m">Last full inspection: Good</h2>
+                    <dl class="govuk-summary-list">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                                 Ofsted inspection date
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                <p class="govuk-body">13-09-17</p>
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
+                                {{ "" | todayGovuk }}
                             </dd>
                         </div>
 
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Overall effectiveness
+                                Effectiveness of leadership and management
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                <p class="govuk-body"><p class="govuk-body">
-                                    <strong class="govuk-tag govuk-tag--green">Good</strong>
-                                </p>
+                                Good
                             </dd>
-                            <dd class="govuk-summary-list__actions">
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Quality of teaching, learning and assessment
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Good
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Personal development, behaviour and welfare
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Good
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Outcomes for pupils
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Good
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Early years provision
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Good
                             </dd>
                         </div>
 
@@ -781,28 +811,11 @@
                             <dt class="govuk-summary-list__key">
                                 Ofsted report
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                                <p class="govuk-body">
-                                    <a href="#" class="govuk-link">Ofsted report 2021 (Placeholder)</a>
-                                </p>
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                            </dd>
-                        </div>
-
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Additional information (optional)
-                            </dt>
                             <dd class="govuk-summary-list__value">
-                                <span class="empty">Empty</span>
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="#">
-                                    Change<span class="govuk-visually-hidden">reason for transfer</span>
-                                </a>
+                                <a href="#" class="govuk-link">View latest inspection report on Ofsted's website (opens in a new tab)</a>
                             </dd>
                         </div>
+                
                     </dl>
                 </div>
             </section>
