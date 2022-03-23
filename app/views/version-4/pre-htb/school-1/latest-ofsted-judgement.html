@@ -13,11 +13,6 @@
             <h1 class="govuk-heading-l">
                 Latest Ofsted report
             </h1>
-            <!--Removing this for mvp as we are not yet sure what will be useful in a given context.
-            <h2 class="govuk-heading-m">
-                Outgoing trust: <span class="govuk-!-font-weight-regular govuk-!-font-size-24">{{ projectData.name }}</span>
-            </h2>
-            <-->
             <p class="govuk-body">
                 This information comes from TRAMS and the data in this page will go into your project template.
             </p>
@@ -31,97 +26,84 @@
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-
+            <!--Short inspection Ofsted report section-->
+            <h2 class="govuk-heading-m">Short inspection</h2>
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        School name
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">The Richard Crosse Cofe Primary School</p>
-                    </dd>
-                    <!--Add change link if necessary based on needs-->
-                    {# <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./set-dates/question-a">
-                        Change<span class="govuk-visually-hidden">outgoing trust</span>
-                    </a>
-                    </dd> #}
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
                         Ofsted inspection date
                     </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">{{ "" | todayGovuk }}</p>
+                    <dd class="govuk-summary-list__value">
+                        {{ "" | todayGovuk }}
+                    </dd>
+                </div>
+            </dl>
+
+            <!--Last full inspection Ofsted report section-->
+            <h2 class="govuk-heading-m">Last full inspection: Good</h2>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Ofsted inspection date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ "" | todayGovuk }}
                     </dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Overall effectiveness
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Effectiveness of leadership and management
                     </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">
-                            Good
-                        </p>
-                    </dd>
-                </div>
-
-                {# <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Achievement of Pupils
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Good</p>
+                    <dd class="govuk-summary-list__value">
+                        Good
                     </dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Quality of teaching
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Quality of teaching, learning and assessment
                     </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Good</p>
+                    <dd class="govuk-summary-list__value">
+                        Good
                     </dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Behaviour and safety of Pupils
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Personal development, behaviour and welfare
                     </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Outstanding</p>
+                    <dd class="govuk-summary-list__value">
+                        Good
                     </dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Leadership & Management
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Outcomes for pupils
                     </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Good</p>
+                    <dd class="govuk-summary-list__value">
+                        Good
                     </dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Early years Provision
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+                        Early years provision
                     </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">Good</p>
+                    <dd class="govuk-summary-list__value">
+                        Good
                     </dd>
-                </div> #}
+                </div>
 
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
+                    <dt class="govuk-summary-list__key govuk-!-width-two-thirds">
                         Ofsted report
                     </dt>
-                    <dd class="govuk-summary-list__value govuk-summary-list__value--width-50">
-                        <p class="govuk-body">
-                            <a href="#" class="govuk-link">Ofsted report 2021 (Placeholder)</a>
-                        </p>
+                    <dd class="govuk-summary-list__value">
+                        <a href="#" class="govuk-link">View latest inspection report on Ofsted's website (opens in a new tab)</a>
                     </dd>
                 </div>
         
