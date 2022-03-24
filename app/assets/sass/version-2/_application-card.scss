@@ -15,7 +15,10 @@
 }
 
 .app-application-card .app-application-card--project-info {
-  width: 60%;
+  width: 100%;
+  @include govuk-media-query($from: desktop, $and: '(orientation: landscape)') {
+    width: 60%;
+  }
 }
 
 .app-application-card .app-application-card--statuses {
