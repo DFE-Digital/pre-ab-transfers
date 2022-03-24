@@ -40,11 +40,11 @@
         {% set outgoingTrust = data['trusts'] | getTrustById(data['outgoing-trust-id']) %}
         <div class="app-application-card">
           <div class="app-application-card--project-info">
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-2">
+            <h4 class="govuk-heading-m govuk-!-margin-bottom-2">
               <a class="govuk-link govuk-!-margin-right-1" href="./pre-htb/school-1/st-wilfreds-ps">
                 {{ project.project_reference }}
               </a>
-            </h3>
+            </h4>
             <p class="govuk-body govuk-!-margin-bottom-1">
               <span class="govuk-!-font-weight-bold govuk-!-display-inline">
                 Outgoing trust:
@@ -58,14 +58,16 @@
               Moordown St John's Church Of England Primary School
             </p>
           </div>
-          {# <div class="app-application-card--statuses">
+          <!--Disabling statuses for the time being until we learn more about the needs to use it
+          <div class="app-application-card--statuses">
             <span class="govuk-tag govuk-tag--orange">
               SAT
             </span>
             <span class="govuk-tag govuk-tag--green">
               SW
             </span>
-          </div> #}
+          </div>
+          <!-->
         </div>
       {% endfor %}
 
