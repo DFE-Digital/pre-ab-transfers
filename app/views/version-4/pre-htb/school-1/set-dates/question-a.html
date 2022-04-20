@@ -8,14 +8,25 @@
 
 
 {% block formQuestions %}
-  <form action="../set-transfer-dates" method="post" novalidate>
+  <form action="../expected-transfer-dates" method="post" novalidate>
     <!--page heading with caption include-->
     {% set pageHeading %}
       <span class="govuk-caption-l">
           {{ projectData.name }}
       </span>
-      Add the date the transfer was first discussed with the outgoing trust
+      When was the transfer first discussed with a trust?
     {% endset %}
+
+    {% set transferFirstDiscussedHint %}
+      <div class="govuk-inset-text">
+        This is the date the transfer was first discussed with any trust, either outgoing or incoming.
+      </div>
+
+      <div id="passport-issued-hint" class="govuk-hint">
+        For example, 23 03 2007
+      </div>
+    {% endset %}
+    
 
     {{ govukDateInput({
       id: "transfer-first-discussed-date",
@@ -28,7 +39,7 @@
         }
       },
       hint: {
-        text: "For example, 12 11 2007"
+        html: transferFirstDiscussedHint
       }
     }) }}
 

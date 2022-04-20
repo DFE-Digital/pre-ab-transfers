@@ -34,7 +34,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Date when the transfer was first discussed
+                        Date when the transfer was first discussed with a trust
                     </dt>
                     <dd class="govuk-summary-list__value">
                     {% if data['transfer-first-discussed-date'] %}
@@ -52,25 +52,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Target date for transfer
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    {% if data['target-date-for-transfer'] %}
-                        <p class="govuk-body">{{data['target-date-for-transfer']}}</p>
-                    {% else %} 
-                        <span class="empty">Empty</span>
-                    {% endif %}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./set-dates/question-b">
-                        Change<span class="govuk-visually-hidden">reason for transfer</span>
-                    </a>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Set HTB date
+                        Advisory board date
                     </dt>
                     <dd class="govuk-summary-list__value">
                     {% if data['set-htb-date-day'] and data['set-htb-date-month'] and data['set-htb-date-year'] %}
@@ -82,8 +64,26 @@
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./set-dates/question-c">
+                    <a class="govuk-link" href="./set-dates/question-b">
                         Change<span class="govuk-visually-hidden">type of transfer</span>
+                    </a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Expected transfer date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['target-date-for-transfer'] %}
+                        <p class="govuk-body">{{data['target-date-for-transfer']}}</p>
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./set-dates/question-c">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
                     </a>
                     </dd>
                 </div>
