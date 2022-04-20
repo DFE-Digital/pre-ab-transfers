@@ -8,13 +8,13 @@
 
 
 {% block formQuestions %}
-  <form action="../set-transfer-dates" method="post" novalidate>
+  <form action="../expected-transfer-dates" method="post" novalidate>
     <!--page heading with caption include-->
     {% set pageHeading %}
       <span class="govuk-caption-l">
           {{ projectData.name }}
       </span>
-      Add the target date for the transfer
+      Advisory Board date
     {% endset %}
 
     {{ govukDateInput({
@@ -28,7 +28,7 @@
         }
       },
       hint: {
-        text: "For example, 12 11 2007. You can change this date later."
+        text: "For example, 12 11 2021. You can change this date later."
       }
     }) }}
 
