@@ -46,10 +46,12 @@
                     Features of the transfer
                   </a>
                 </span>
-                {% if data['reason-for-this-transfer'] %}
+                {% if data['reason-for-this-transfer'] and data['type-of-transfer'] %}
                   <strong class="govuk-tag app-task-list__tag">Completed</strong>
+                {% elif data['reason-for-this-transfer'] or data['type-of-transfer'] %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag">In progress</strong>
                 {% else %}
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</strong>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</strong>
                 {% endif %}
               </li>
 

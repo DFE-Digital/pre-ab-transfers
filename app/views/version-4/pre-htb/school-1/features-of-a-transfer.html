@@ -45,6 +45,25 @@
                     </dd>
                 </div>
 
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Type of transfer
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    {% if data['type-of-transfer']%}
+                        <p class="govuk-body">{{data['type-of-transfer']}}</p>
+                        <p class="govuk-body">{{data['other-type-of-transfer']}}</p>
+                    {% else %} 
+                        <span class="empty">Empty</span>
+                    {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="./features/question-b">
+                        Change<span class="govuk-visually-hidden">type of transfer</span>
+                    </a>
+                    </dd>
+                </div>
+
             </dl>
 
             <form action="./st-wilfreds-ps" method="post" novalidate>
