@@ -1,6 +1,6 @@
 {% extends "version-4/layout.html" %}
 
-{% set pageTitle = "Transfer dates – Transfer an academy – GOV.UK" %}
+{% set pageTitle = "Features of the transfer – Transfer an academy – GOV.UK" %}
 
 {% set projectData = data['records'][0] %}
 
@@ -16,13 +16,8 @@
                 Project reference: {{ projectData.project_reference }}
             </span>
             <h1 class="govuk-heading-l">
-                Transfer dates
+                Features of the transfer
             </h1>
-            <!--Removing this for mvp as we are not yet sure what will be useful in a given context.
-            <h2 class="govuk-heading-m">
-                Outgoing trust: <span class="govuk-!-font-weight-regular govuk-!-font-size-24">{{ projectData.name }}</span>
-            </h2>
-            <-->
         <hr class="govuk-section-break govuk-section-break--l">
         </div>
     </div>
@@ -30,21 +25,21 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
 
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <dl class="govuk-summary-list govuk-!-margin-bottom-7">
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Date when the transfer was first discussed with a trust
+                        Who initiated this academy transfer?
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['transfer-first-discussed-date'] %}
-                        <p class="govuk-body">{{data['transfer-first-discussed-date']}}</p>
+                    {% if data['Who initiated the academy transfer']%}
+                        {{data['Who initiated the academy transfer']}}
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./set-dates/question-a">
+                    <a class="govuk-link" href="./features/question-a?returnToTaskList=yes">
                         Change<span class="govuk-visually-hidden">outgoing trust</span>
                     </a>
                     </dd>
@@ -52,38 +47,38 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Advisory Board date
+                        Reason for transfer
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['set-htb-date-day'] and data['set-htb-date-month'] and data['set-htb-date-year'] %}
-                        <p class="govuk-body">
-                            {{ [data['set-htb-date-day'], data['set-htb-date-month'], data['set-htb-date-year']] | arrayToGovukDate }}
-                        </p>
+                    {% if data['rdd or esfa intervention']%}
+                        <p class="govuk-body">{{data['rdd or esfa intervention']}}</p>
+                        <p class="govuk-body">{{data['more-detail']}}</p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./set-dates/question-b">
-                        Change<span class="govuk-visually-hidden">type of transfer</span>
+                    <a class="govuk-link" href="./features/question-b">
+                        Change<span class="govuk-visually-hidden">reason for transfer</span>
                     </a>
                     </dd>
                 </div>
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Expected transfer date
+                        Type of transfer
                     </dt>
                     <dd class="govuk-summary-list__value">
-                    {% if data['target-date-for-transfer'] %}
-                        <p class="govuk-body">{{data['target-date-for-transfer']}}</p>
+                    {% if data['type-of-transfer']%}
+                        <p class="govuk-body">{{data['type-of-transfer']}}</p>
+                        <p class="govuk-body">{{data['other-type-of-transfer']}}</p>
                     {% else %} 
                         <span class="empty">Empty</span>
                     {% endif %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="./set-dates/question-c">
-                        Change<span class="govuk-visually-hidden">reason for transfer</span>
+                    <a class="govuk-link" href="./features/question-c">
+                        Change<span class="govuk-visually-hidden">type of transfer</span>
                     </a>
                     </dd>
                 </div>
@@ -93,12 +88,25 @@
             <form action="./st-wilfreds-ps" method="post" novalidate>
 
             <input type="hidden" name="answers-checked" value="true">
+            
+            {% if data['Who initiated the academy transfer'] and data['rdd or esfa intervention'] and data['type-of-transfer'] %}
+            {{ govukCheckboxes({
+            idPrefix: "features-section-complete",
+            name: "features-section-complete",
+            items: [
+                {
+                value: "Mark this section as complete, you can still make changes later",
+                checked: checked("['features-section-complete']", "Mark this section as complete, you can still make changes later"),
+                id: "features-completed",
+                text: "Mark this section as complete, you can still make changes later"
+                }
+            ]
+            }) }}
+            {% endif %}
 
-            <div class="govuk-button-group">
-                <button class="govuk-button" data-module="govuk-button">
-                    Confirm and continue
-                </button>
-            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Confirm and continue
+            </button>
 
             </form>           
         </div>
