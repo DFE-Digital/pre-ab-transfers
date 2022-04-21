@@ -1,6 +1,6 @@
 {% extends "version-4/layout.html" %}
 
-{% set pageTitle = "Preview headteacher board (HTB) template – Transfer an academy – GOV.UK" %}
+{% set pageTitle = "Preview headteacher board (HTB) template – Manage an academy transfer" %}
 
 {% set projectData = data['records'][0] %}
 
@@ -34,37 +34,18 @@
                     <dl class="govuk-summary-list">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Who initiated this academy transfer?
+                                What is the reason for this transfer?
                             </dt>
                             <dd class="govuk-summary-list__value">
-                            {% if data['Who initiated the academy transfer']%}
-                                {{data['Who initiated the academy transfer']}}
+                            {% if data['reason-for-this-transfer']%}
+                                {{data['reason-for-this-transfer']}}
                             {% else %} 
                                 <span class="empty">Empty</span>
                             {% endif %}
                             </dd>
                             <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="./features/question-a">
+                            <a class="govuk-link" href="./features/question-a?returnToTaskList=yes">
                                 Change<span class="govuk-visually-hidden">outgoing trust</span>
-                            </a>
-                            </dd>
-                        </div>
-
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Reason for transfer
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                            {% if data['rdd or esfa intervention']%}
-                                <p class="govuk-body">{{data['rdd or esfa intervention']}}</p>
-                                <p class="govuk-body">{{data['more-detail']}}</p>
-                            {% else %} 
-                                <span class="empty">Empty</span>
-                            {% endif %}
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="./features/question-b">
-                                Change<span class="govuk-visually-hidden">reason for transfer</span>
                             </a>
                             </dd>
                         </div>
@@ -82,11 +63,12 @@
                             {% endif %}
                             </dd>
                             <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="./features/question-c">
+                            <a class="govuk-link" href="./features/question-b">
                                 Change<span class="govuk-visually-hidden">type of transfer</span>
                             </a>
                             </dd>
                         </div>
+
                     </dl>
                 </div>
             </section>

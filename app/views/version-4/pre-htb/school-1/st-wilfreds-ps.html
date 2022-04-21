@@ -46,12 +46,12 @@
                     Features of the transfer
                   </a>
                 </span>
-                {% if checked("['features-section-complete']", "Mark this section as complete, you can still make changes later") %}
-                  <strong class="govuk-tag app-task-list__tag" id="benefits-and-other-factors">Completed</strong>
-                {% elif data['Who initiated the academy transfer'] or data['rdd or esfa intervention'] or data['type-of-transfer'] %}
-                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="benefits-and-other-factors">In progress</strong>
+                {% if data['reason-for-this-transfer'] and data['type-of-transfer'] %}
+                  <strong class="govuk-tag app-task-list__tag">Completed</strong>
+                {% elif data['reason-for-this-transfer'] or data['type-of-transfer'] %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag">In progress</strong>
                 {% else %}
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="benefits-and-other-factors">Not started</strong>
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</strong>
                 {% endif %}
               </li>
 
@@ -71,11 +71,11 @@
                   </a>
                 </span>
                 {% if checked("['benefits-risks-section-complete']", "Mark this section as complete, you can still make changes later") %}
-                  <strong class="govuk-tag app-task-list__tag" id="benefits-and-other-factors">Completed</strong>
+                  <strong class="govuk-tag app-task-list__tag">Completed</strong>
                 {% elif data['benefits-of-transfer'] or data['risks-branching'] %}
-                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="benefits-and-other-factors">In progress</strong>
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag">In progress</strong>
                 {% else %}
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="benefits-and-other-factors">Not started</strong>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</strong>
                 {% endif %}
               </li>
 
@@ -86,11 +86,11 @@
                   </a>
                 </span>
                 {% if checked("['rationale-section-complete']", "Mark this section as complete, you can still make changes later") %}
-                  <strong class="govuk-tag app-task-list__tag" id="benefits-and-other-factors">Completed</strong>
+                  <strong class="govuk-tag app-task-list__tag">Completed</strong>
                 {% elif data['project-rationale'] or data['trust-rationale'] %}
-                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="benefits-and-other-factors">In progress</strong>
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag">In progress</strong>
                 {% else %}
-                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="benefits-and-other-factors">Not started</strong>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</strong>
                 {% endif %}
               </li>
 
