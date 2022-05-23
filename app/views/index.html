@@ -1,7 +1,13 @@
+{% extends "version-4/layout.html" %}
 
-{% extends "layout.html" %}
+{% set pageTitle = "Academy transfer projects – Transfer an academy – GOV.UK" %}
+
+{% block beforeContent %}
+  {% include "version-4/includes/phase-banner.html" %}
+{% endblock %}
 
 {% block content %}
+
 <div class="govuk-grid-row"> <div class="govuk-grid-column-two-thirds"> <h1 class="govuk-heading-l">Manage an academy conversion prototype</h1> <p class="govuk-body-l">This is where the SDD Manage an academy conversion service prototype lives.</p> <p class="govuk-body-l">You can use this to:
   <ul class="govuk-list govuk-list--bullet govuk-body-l">
     <li>TEST ********errewrwerwerwe view all your conversion projects</li>
@@ -33,7 +39,15 @@
           </ul>
         </nav>
       </aside>
+=======
 
+
+      {{ govukButton({
+        text: "Start prototype",
+        href: "/version-4/index",
+        isStartButton: true
+      }) }}
     </div>
   </div>
+
 {% endblock %}
