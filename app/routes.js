@@ -65,7 +65,7 @@ router.post('/conditions2-previous', function (req, res) {
 })
 
 
-
+//routing for project type page
 router.post('/type-answer', function (req, res) {
   // Make a variable to give it the value from the radio buttons on the index page  
   var Task = req.session.data['control-name']
@@ -73,13 +73,12 @@ router.post('/type-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (Task == "conversions") { 
     // Send user to next page 
-      res.redirect('MVP/projects-list')
-
+      res.redirect('https://pre-ab-conversions.herokuapp.com/MVP/projects-list')
   } 
   
   else if (Task == "transfers") {
   //send user to transfers prototype
-      res.redirect('https://academy-transfers-prototype.london.cloudapps.digital/version-4/dashboard-home')
+      res.redirect('version-4/dashboard-home')
   }
 
 
