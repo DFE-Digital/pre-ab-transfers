@@ -23,7 +23,24 @@ router.get('/transfers/incoming-trust-search', (req, res) => {
   }
 })
 
+router.post('/conditions2-previous', function (req, res) {
 
+  // Make a variable and give it the value from 'list'
+  var projectConditions2 = req.session.data['Conditions2']
+
+  // Check whether the variable matches a condition
+  if (projectConditions2 == "Yes"){
+    // Send user to next page
+    res.redirect('MVP/overview/previous-yes')
+
+  } else if (projectConditions2 == "No"){
+  res.redirect('/MVP/overview/summary1')
+  }
+  
+})
+
+
+//routing for project type page
 router.post('/type-answer', function (req, res) {
   // Make a variable to give it the value from the radio buttons on the index page  
   var Task = req.session.data['control-name']
@@ -32,14 +49,12 @@ router.post('/type-answer', function (req, res) {
 
   if (Task == "conversions") { 
     // Send user to next page 
-      res.redirect('https://academy-conversions.herokuapp.com/MVP/index')
-
+      res.redirect('https://pre-ab-conversions.herokuapp.com/MVP/projects-list')
   } 
   
   else if (Task == "transfers") {
   //send user to transfers prototype
       res.redirect('version-4/dashboard-home')
-
   }
 
 
