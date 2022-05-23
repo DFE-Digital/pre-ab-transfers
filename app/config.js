@@ -4,7 +4,7 @@
 
 module.exports = {
   // Service name used in header. Eg: 'Renew your passport'
-  serviceName: 'Manage trusts and academy schools',
+  serviceName: 'testing Prepare for advisory board',
 
   // Default port that prototype runs on
   port: '3000',
@@ -25,12 +25,7 @@ module.exports = {
   // Force HTTP to redirect to HTTPS on production
   useHttps: 'true',
 
-  // Cookie warning - update link to service's cookie page.
-  cookieText: 'GOV.UK uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>',
-
   // Enable or disable Browser Sync
-  useBrowserSync: 'true',
-
-  pageTitle: 'Manage trusts and academy schools'
+  useBrowserSync: 'true'
 
 }
