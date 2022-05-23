@@ -55,12 +55,14 @@
 {% endblock %}
 
 {% block header %}
-<header class="govuk-header " role="banner" data-module="govuk-header">
+  {% include "_includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  <header class="govuk-header " role="banner" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__logo govuk-!-width-two-thirds">
-      <a href="../../index" class="govuk-header__link govuk-header__link--homepage">
+      <a href="/version-4/dashboard-home" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype-text">
-          {{serviceName}}
+          Prepare for advisory board
           <!--Transfer an academy-->
         </span>
       </a>
@@ -71,7 +73,7 @@
         <ul id="navigation" class="govuk-header__navigation " aria-label="Navigation menu">
           <li class="govuk-header__navigation-item">
             <a class="govuk-header__link" href="#4">
-              Sign out
+              Signout
             </a>
           </li>
         </ul>
@@ -80,110 +82,61 @@
   </div>
 </header>
 
-
-
-<div class="app-phase-banner__wrapper">
-  <div class="govuk-phase-banner app-phase-banner govuk-width-container">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      prototype
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a prototype of a new service – Some parts of this prototype do not work yet.
-    </span>
-    </p>
-  </div>
-</div>
-<!--
-<div class="app-primary-navigation">
-  <div class="app-primary-navigation__container">
-    <div class="app-primary-navigation__nav">
-      <nav class="app-primary-navigation" aria-label="main menu">
-        <ul class="app-primary-navigation__list">
-            <li class="app-primary-navigation__item">
-              <a class="app-primary-navigation__link" aria-current="index" href="/index">Conversions (4)</a>
-            </li>
-            <li class="app-primary-navigation__item">
-              <a class="app-primary-navigation__link"  href="#">Transfers (2)</a>
-            </li>
-            <li class="app-primary-navigation__item"> 
-              <a class="app-primary-navigation__link"  href="#">Changes (1)</a>
-            </li> 
-          </ul>
-      </nav>
-    </div>
-  </div>
-</div>-->
 {% endblock %}
 
-{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
-djkasjd
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% endblock %}
+
+
+{% set metaHtml %}
+  <ul class="govuk-footer__meta-custom govuk-list govuk-!-font-size-16">
+    <li>Email: <a class="govuk-link govuk-footer__link" href="mailto:sddservicessupport@education.gov.uk">sddservicessupport<wbr>@education.gov.uk</a></li>
+    <li>We aim to respond within 5 working days, or one working day for more urgent&nbsp;queries</li>
+  </ul>
+{% endset %}
+
 {% if useAutoStoreData %}
   {% block footer %}
-  <footer class="govuk-footer " role="contentinfo">
-    <div class="govuk-width-container ">
-      <div class="govuk-footer__navigation">
-        <div class="govuk-footer__section">
-          <h2 class="govuk-footer__heading govuk-heading-m">Get support</h2>
-          <ul class="govuk-footer__list govuk-footer__list--columns-1">
-            <li class="govuk-footer__list-item">
-              Email <a class="govuk-footer__link" href="mailto:servicedelivery.rdd@education.gov.uk?subject=Manage an academy conversion support">
-               servicedelivery.rdd@education.gov.uk </a></br>
-              
-              <p class="govuk-body-s govuk-margin-top"> You'll get a response in 2 working days</p>
-              
-          </ul>
-        </div>
-        <div class="govuk-footer__section">
-          <h2 class="govuk-footer__heading govuk-heading-m">Give feedback</h2>
-          <ul class="govuk-footer__list govuk-footer__list--columns-1">
-            <li class="govuk-footer__list-item">
-              <a class="govuk-footer__link" href="#" target="_blank">
-                Give feedback on Manage an academy conversion (opens in a new tab) </a></li>
-               
-          </ul>
-        </div>
-      </div>
-            
-            
-          
-          
-            
-            <div class="govuk-footer__meta">
-              <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-                <ul class="govuk-footer__inline-list">
-                
-                  <li class="govuk-footer__inline-list-item">
-                    <a class="govuk-footer__link" href="/accessibility-statement">
-                      Accessibility statement
-                    </a>
-                  </li>
-                
-                 
-                
-                  <li class="govuk-footer__inline-list-item">
-                    <a class="govuk-footer__link" href="/prototype-admin/clear-data">
-                      Clear data
-                    </a>
-                  </li>
-                
-                  
-                
-              </ul>
-                <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
-                  <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145" />
-                </svg>
-                <span class="govuk-footer__licence-description">
-                  All content is available under the
-                  <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
-                </span>
-              </div>
-              <div class="govuk-footer__meta-item">
-                <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
-              </div>
-            </div>
-          </div>
-  </footer>
+    {{ appFooter({
+      classes: "govuk-footer--app",
+      meta: {
+        title: "Get support",
+        html: metaHtml,
+        items: [
+        {
+          href: "/accessibility-statement",
+          text: "Accessibility"
+        },{
+          href: "/cookies",
+          text: "Cookies"
+        },{
+          href: "/privacy-policy",
+          text: "Privacy policy"
+        },{
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }, {
+          href: "/prototype-admin",
+          text: "Prototype admin"
+        }, {
+          href: "/apply/" + providerCode + "/" + courseCode + "?dualrunning=true&variant=1",
+          text: "v1"
+        } if providerCode and courseCode, {
+          href: "/apply/" + providerCode + "/" + courseCode + "?dualrunning=true&variant=2",
+          text: "v2"
+        } if providerCode and courseCode, {
+          href: "/apply/" + providerCode + "/" + courseCode + "?dualrunning=true&variant=3",
+          text: "v3"
+        } if providerCode and courseCode]
+      }
+    }) }}
   {% endblock %}
 {% endif %}
 
@@ -194,4 +147,3 @@ djkasjd
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}
-
