@@ -23,7 +23,7 @@ router.get('/transfers/incoming-trust-search', (req, res) => {
   }
 })
 
-//routing for type of project
+
 router.post('/type-answer', function (req, res) {
   // Make a variable to give it the value from the radio buttons on the index page  
   var Task = req.session.data['control-name']
@@ -32,7 +32,7 @@ router.post('/type-answer', function (req, res) {
 
   if (Task == "conversions") { 
     // Send user to next page 
-      res.redirect('https://pre-ab-conversions.herokuapp.com/MVP/projects-list')
+      res.redirect('https://academy-conversions.herokuapp.com/MVP/index')
 
   } 
   
