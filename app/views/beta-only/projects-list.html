@@ -1,0 +1,147 @@
+{% extends "layout.html" %}
+
+
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+<a href="index" class="govuk-back-link">Back to project type</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Manage an academy transfer</h1>
+
+
+    <p class="govuk-body-m">
+      Use this service to start a new academy transfer project or update an existing project.
+    </p>
+
+    {{ govukButton({
+    text: "Start a new transfer project",
+    href: "./start-new-project/add-outgoing-trust-name",
+    isStartButton: true
+    }) }}
+
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Projects (9)</h2>
+
+
+    <!--search feature-->
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--m" for="search">
+        Search for a project
+      </label>
+      <div id="search-hint" class="govuk-hint">
+        Enter a name, URN, companies house number or trust reference number
+
+      </div>
+      <input class="govuk-input govuk-!-width-one-half" id="search" name="search" type="text">
+      <a href="multiple-results-list" role="button" draggable="false" class="govuk-button govuk-button"
+        data-module="govuk-button">
+        Search
+      </a>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    </div>
+
+    {% for project in data['records'] %}
+    {% set outgoingTrust = data['trusts'] | getTrustById(data['outgoing-trust-id']) %}
+    <div class="app-application-card">
+      <div class="app-application-card--project-info">
+        <h4 class="govuk-heading-m govuk-!-margin-bottom-2">
+          <a class="govuk-link govuk-!-margin-right-1" href="st-wilfreds-ps">
+            {{ project.project_reference }}
+          </a>
+        </h4>
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          <span class="govuk-!-font-weight-bold govuk-!-display-inline">
+            Outgoing trust:
+          </span>
+          {{ project.name }}
+        </p>
+        <p class="govuk-body">
+          <span class="govuk-!-font-weight-bold govuk-!-display-inline">
+            Incoming trust:
+          </span>
+          Moordown St John's Church Of England Primary School
+        </p>
+
+
+      </div>
+      <!--Disabling statuses for the time being until we learn more about the needs to use it
+      <div class="app-application-card--statuses">
+        <span class="govuk-tag govuk-tag--orange">
+          SAT
+        </span>
+        <span class="govuk-tag govuk-tag--green">
+          SW
+        </span>
+      </div>
+      <!-->
+
+
+    </div>
+
+    <div class="app-application-card">
+      <div class="app-application-card--project-info">
+        <h4 class="govuk-heading-m govuk-!-margin-bottom-2">
+          <a class="govuk-link govuk-!-margin-right-1" href="st-wilfreds-ps">
+            {{ project.project_reference }}
+          </a>
+        </h4>
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          <span class="govuk-!-font-weight-bold govuk-!-display-inline">
+            Outgoing trust:
+          </span>
+          {{ project.name }}
+        </p>
+        <p class="govuk-body">
+          <span class="govuk-!-font-weight-bold govuk-!-display-inline">
+            Incoming trust:
+          </span>
+          Moordown St John's Church Of England Primary School
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="app-application-card">
+      <div class="app-application-card--project-info">
+        <h4 class="govuk-heading-m govuk-!-margin-bottom-2">
+          <a class="govuk-link govuk-!-margin-right-1" href="st-wilfreds-ps">
+            {{ project.project_reference }}
+          </a>
+        </h4>
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          <span class="govuk-!-font-weight-bold govuk-!-display-inline">
+            Outgoing trust:
+          </span>
+          {{ project.name }}
+        </p>
+        <p class="govuk-body">
+          <span class="govuk-!-font-weight-bold govuk-!-display-inline">
+            Incoming trust:
+          </span>
+          Moordown St John's Church Of England Primary School
+        </p>
+        
+      </div>
+
+  </div>
+
+    {% endfor %}
+
+  </div>
+
+</div>
+{% endblock %}

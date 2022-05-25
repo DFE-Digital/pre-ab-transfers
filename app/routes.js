@@ -29,14 +29,14 @@ router.post('/conditions2-previous', function (req, res) {
   var projectConditions2 = req.session.data['Conditions2']
 
   // Check whether the variable matches a condition
-  if (projectConditions2 == "Yes"){
+  if (projectConditions2 == "Yes") {
     // Send user to next page
     res.redirect('MVP/overview/previous-yes')
 
-  } else if (projectConditions2 == "No"){
-  res.redirect('/MVP/overview/summary1')
+  } else if (projectConditions2 == "No") {
+    res.redirect('/MVP/overview/summary1')
   }
-  
+
 })
 
 
@@ -47,18 +47,18 @@ router.post('/type-answer', function (req, res) {
 
   // Check whether the variable matches a condition
 
-  if (Task == "conversions") { 
+  if (Task == "conversions") {
     // Send user to next page 
-      res.redirect('https://pre-ab-conversions.herokuapp.com/MVP/projects-list')
-  } 
-  
+    res.redirect('https://pre-ab-conversions.herokuapp.com/MVP/projects-list')
+  }
+
   else if (Task == "transfers") {
-  //send user to transfers prototype
-      res.redirect('version-4/dashboard-home')
+    //send user to transfers prototype
+    res.redirect('version-4/dashboard-home')
   }
 
 
-  })
+})
 
 module.exports = router
 
@@ -66,8 +66,8 @@ module.exports = router
 router.post('/decide-risks-branch', function (req, res) {
 
   var howManyBalls = req.session.data['risks-branching']
-  
-  if (howManyBalls == "Yes"){
+
+  if (howManyBalls == "Yes") {
     // Send user to risks page
     res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-risks')
   } else {
@@ -93,41 +93,31 @@ router.post('/associated-risks-for-transfer', function (req, res) {
       if (associatedRisksForTransfer.includes("There are finance and debt concerns")) {
         res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-finance-and-debt-concerns-detail')
       }
+
       else {
-        if (associatedRisksForTransfer.includes("Other risks")) {
-          res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
+        if (associatedRisksForTransfer.includes("There are outgoing trust issues")) {
+          res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-outgoing-trust-issues')
+        }
+      
+
+        else {
+          if (associatedRisksForTransfer.includes("Other risks")) {
+            res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
+          }
         }
       }
+      }
     }
-  }
 
-})
+  })
 
 router.post('/submit-high-profile', function (req, res) {
 
   var associatedRisksForTransfer = req.session.data['risks-issues']
-    if (associatedRisksForTransfer.includes("There are complex land and building issues")) {
-      res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-complex-land-and-building-detail')
-    }
-    else {
-      if (associatedRisksForTransfer.includes("There are finance and debt concerns")) {
-        res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-finance-and-debt-concerns-detail')
-      }
-      else {
-        if (associatedRisksForTransfer.includes("Other risks")) {
-          res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
-        }
-        else {
-          // Send user to benefits and risks summary page
-          res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
-        }
-      }
-    }
-})
-
-router.post('/submit-land-and-building-issues', function (req, res) {
-
-  var associatedRisksForTransfer = req.session.data['risks-issues']
+  if (associatedRisksForTransfer.includes("There are complex land and building issues")) {
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-complex-land-and-building-detail')
+  }
+  else {
     if (associatedRisksForTransfer.includes("There are finance and debt concerns")) {
       res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-finance-and-debt-concerns-detail')
     }
@@ -140,11 +130,16 @@ router.post('/submit-land-and-building-issues', function (req, res) {
         res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
       }
     }
+  }
 })
 
-router.post('/submit-finance-debt-concern', function (req, res) {
+router.post('/submit-land-and-building-issues', function (req, res) {
 
   var associatedRisksForTransfer = req.session.data['risks-issues']
+  if (associatedRisksForTransfer.includes("There are finance and debt concerns")) {
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-finance-and-debt-concerns-detail')
+  }
+  else {
     if (associatedRisksForTransfer.includes("Other risks")) {
       res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
     }
@@ -152,4 +147,17 @@ router.post('/submit-finance-debt-concern', function (req, res) {
       // Send user to benefits and risks summary page
       res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
     }
+  }
+})
+
+router.post('/submit-finance-debt-concern', function (req, res) {
+
+  var associatedRisksForTransfer = req.session.data['risks-issues']
+  if (associatedRisksForTransfer.includes("Other risks")) {
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
+  }
+  else {
+    // Send user to benefits and risks summary page
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
+  }
 })
