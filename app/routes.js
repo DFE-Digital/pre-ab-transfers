@@ -77,80 +77,100 @@ router.post('/decide-risks-branch', function (req, res) {
 
 })
 
+//Anne reordering pages which appear after selecting checkboxes
 // Run this code when a form is submitted to 'risks-details'
+//checks which checkboxes have been selected on questions-b-risks and shows first one it comes across, 
+//the resulting page then checks which others were selected (which haven't been checked already) 
 router.post('/associated-risks-for-transfer', function (req, res) {
 
   var associatedRisksForTransfer = req.session.data['risks-issues']
-
-  if (associatedRisksForTransfer.includes("This is a high profile transfer (ministers and media could be involved)")) {
-    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-high-profile-transfer')
-  }
-  else {
-    if (associatedRisksForTransfer.includes("There are complex land and building issues")) {
-      res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-complex-land-and-building-detail')
-    }
-    else {
-      if (associatedRisksForTransfer.includes("There are finance and debt concerns")) {
-        res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-finance-and-debt-concerns-detail')
-      }
-
-      else {
-        if (associatedRisksForTransfer.includes("There are outgoing trust issues")) {
-          res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-outgoing-trust-issues')
-        }
-      
-
-        else {
-          if (associatedRisksForTransfer.includes("Other risks")) {
-            res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
-          }
-        }
-      }
-      }
-    }
-
-  })
-
-router.post('/submit-high-profile', function (req, res) {
-
-  var associatedRisksForTransfer = req.session.data['risks-issues']
+  // So, take a look at router.post('/submit-high-profile' and you'll see it does this IF check, same for the others. 
+//checking which checkboxes have been selected
   if (associatedRisksForTransfer.includes("There are complex land and building issues")) {
-    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-complex-land-and-building-detail')
+    return res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-complex-land-and-building-detail')
   }
-  else {
-    if (associatedRisksForTransfer.includes("There are finance and debt concerns")) {
-      res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-finance-and-debt-concerns-detail')
-    }
-    else {
-      if (associatedRisksForTransfer.includes("Other risks")) {
-        res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
-      }
-      else {
-        // Send user to benefits and risks summary page
-        res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
-      }
-    }
+  else if (associatedRisksForTransfer.includes("There are finance and debt concerns")) {
+    return res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-finance-and-debt-concerns-detail')
   }
+  else if (associatedRisksForTransfer.includes("This is a high profile transfer (ministers and media could be involved)")) {
+    return res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-high-profile-transfer')
+  }
+  else if (associatedRisksForTransfer.includes("There are outgoing trust issues")) {
+    return res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-outgoing-trust-issues')
+  }
+  else if (associatedRisksForTransfer.includes("Other risks")) {
+    return res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
+  }
+
+
 })
 
+//checking what else has been selected in addition to complex land
 router.post('/submit-land-and-building-issues', function (req, res) {
 
   var associatedRisksForTransfer = req.session.data['risks-issues']
   if (associatedRisksForTransfer.includes("There are finance and debt concerns")) {
     res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-finance-and-debt-concerns-detail')
   }
+  else if (associatedRisksForTransfer.includes("This is a high profile transfer (ministers and media could be involved)")) {
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-high-profile-transfer')
+  }
+  else if (associatedRisksForTransfer.includes("outgoing-trust-issues")) {
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-outgoing-trust-issues')
+  }
+  else if (associatedRisksForTransfer.includes("Other risks")) {
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
+  }
   else {
-    if (associatedRisksForTransfer.includes("Other risks")) {
-      res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
-    }
-    else {
-      // Send user to benefits and risks summary page
-      res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
-    }
+    // Send user to benefits and risks summary page
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
   }
 })
 
+
+
+// checking what else has been selected in addition to finance
 router.post('/submit-finance-debt-concern', function (req, res) {
+
+  var associatedRisksForTransfer = req.session.data['risks-issues']
+  
+if (associatedRisksForTransfer.includes("This is a high profile transfer (ministers and media could be involved)")) {
+  res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-high-profile-transfer')
+}
+
+else if (associatedRisksForTransfer.includes("There are outgoing trust issues")) {
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-outgoing-trust-issues')
+  }
+  else if (associatedRisksForTransfer.includes("Other risks")) {
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
+  }
+  else {
+    // Send user to benefits and risks summary page
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
+  }
+})
+
+//checking what else has been selected in addition to high profile
+router.post('/submit-high-profile', function (req, res) {
+
+  var associatedRisksForTransfer = req.session.data['risks-issues']
+  if (associatedRisksForTransfer.includes("There are outgoing trust issues")) {
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-outgoing-trust-issues')
+  }
+  else if (associatedRisksForTransfer.includes("Other risks")) {
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors/question-b-details-other-risks')
+  }
+  else {
+    // Send user to benefits and risks summary page
+    res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
+  }
+})
+
+
+
+// Andy Jones - Added to support the post of outgoing trust issues (next logic option in the list os other so logic next route is other or summary
+//checking what else has been selected in addition to outgoing
+router.post('/outgoing-trust-issues', function (req, res) {
 
   var associatedRisksForTransfer = req.session.data['risks-issues']
   if (associatedRisksForTransfer.includes("Other risks")) {
@@ -161,3 +181,5 @@ router.post('/submit-finance-debt-concern', function (req, res) {
     res.redirect('/version-4/pre-htb/school-1/benefits-and-other-factors')
   }
 })
+
+
